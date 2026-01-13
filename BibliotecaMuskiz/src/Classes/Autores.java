@@ -25,6 +25,4 @@ public class Autores {
         this.premios = premios;
         this.obrasDestacadas = obrasDestacadas;
     }
-
-    
 }
