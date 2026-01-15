@@ -36,9 +36,13 @@ public class Libros {
 
     public int getIdLibro() { 
         return idLibro; 
-    } //getter que devuelve el idAutor
+    } //getter que devuelve el idLibro
+
+    public String getTitulo() {
+        return titulo;
+    }
     
-    /*public String getAutor() { 
-        return autor;
-    } //getter que devuelve el nombre del autor*/
+    public String getAutor() { 
+        return autor.getNombre();
+    } //getter que devuelve el nombre del autor
 }

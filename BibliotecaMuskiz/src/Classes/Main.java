@@ -99,6 +99,8 @@ public class Main {
             true
         );
 
+        libros.add(libro1);
+
         Scanner sc = new Scanner(System.in);
         int opcion;
         int accion;
@@ -275,9 +277,9 @@ public class Main {
                     } else if (accion == 3) {
                         System.out.println("---- LIBROS ----");
 
-                        /*for (Libros a : libros) {
-                            System.out.println(a.getIdLibro() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
-                        }*/
+                        for (Libros a : libros) {
+                            System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
+                        }
                     }
                 } while (accion != 4);
             }
