@@ -4,8 +4,8 @@ public class Libros {
     private int existencias;
     private int numeroPaginas;
     private String titulo;
-    private String autor;
-    private String genero; //Se refiere a si es Literatura dramática, lírica, narrativa...
+    private Autores autor;
+    private String genero; //Se refiere al genero del libro: comedia, aventuras, fantasia...
     private String anioPublicacion;
     private String editorial;
     private String isbn;
@@ -13,10 +13,10 @@ public class Libros {
     private String formato;
     private String portada; //Se mete un link de la portada
     private String descripcion;
-    private String categoria; //Se refiere a si es de Literatura, Comedia, Drama...
+    private String categoria; //Se refiere a la "tecnica" de escritura: literatura, poesia, teatro...
     private boolean disponibilidad;
 
-    public Libros(int idLibro, int existencias, int numeroPaginas, String titulo, String autor, String genero, String anioPublicacion, String editorial, String isbn, String idioma, String formato, String portada, String descripcion, String categoria, boolean disponibilidad) {
+    public Libros(int idLibro, int existencias, int numeroPaginas, String titulo, Autores autor, String genero, String anioPublicacion, String editorial, String isbn, String idioma, String formato, String portada, String descripcion, String categoria, boolean disponibilidad) {
         this.idLibro = idLibro;
         this.existencias = existencias;
         this.numeroPaginas = numeroPaginas;
@@ -33,4 +33,12 @@ public class Libros {
         this.categoria = categoria;
         this.disponibilidad = disponibilidad;
     }
+
+    public int getIdLibro() { 
+        return idLibro; 
+    } //getter que devuelve el idAutor
+    
+    /*public String getAutor() { 
+        return autor;
+    } //getter que devuelve el nombre del autor */
 }

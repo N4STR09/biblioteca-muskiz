@@ -79,6 +79,26 @@ public class Main {
         autores.add(autor4);
         autores.add(autor5);
 
+        List<Libros> libros = new ArrayList<>();
+
+        Libros libro1 = new Libros(
+            1,
+            3,
+            450,
+            "Harry Potter y el Caliz de Fuego",
+            autor3,
+            "Fantasia",
+            "2002",
+            "Santillana Ediciones",
+            "12jhf",
+            "Español",
+            "Fisico",
+            "",
+            "",
+            "literatura",
+            true
+        );
+
         Scanner sc = new Scanner(System.in);
         int opcion;
         int accion;
@@ -186,11 +206,59 @@ public class Main {
                     sc.nextLine();
 
                     if (accion == 1) {
-                        //TODO crear funcionalidad de añadir libro
+                        //solicitud de datos al usuario
+                        System.out.print("Titulo del libro: ");
+                        String titulo = sc.nextLine();
+
+                        System.out.print("Autor del libro: ");
+                        String autor = sc.nextLine();
+
+                        System.out.print("Género del libro: ");
+                        String genero = sc.nextLine();
+
+                        int existencias = 1;
+                        int numeroPaginas = 1;
+                        String anioPublicacion = "";
+                        String editorial = "";
+                        String isbn = "";
+                        String idioma = "";
+                        String formato = "";
+                        String portada = ""; 
+                        String descripcion = "";
+                        String categoria = ""; 
+                        boolean disponibilidad = true;
+
+                        int id = libros.size() + 1; //asignacion de ID automatica
+
+                        //creamos un nuevo autor
+                        /*Libros nuevoLibro = new Libros(
+                            id,
+                            existencias,
+                            numeroPaginas,
+                            titulo,
+                            autor,
+                            genero,
+                            anioPublicacion,
+                            editorial,
+                            isbn,
+                            idioma,
+                            formato,
+                            portada,
+                            descripcion,
+                            categoria,
+                            disponibilidad
+                        );
+
+                        libros.add(nuevoLibro); //lo añadimos a la lista */
+                        System.out.println("Libro añadido correctamente.");
                     } else if (accion == 2) {
                         //TODO crear funcionalidad de eliminar libro
                     } else if (accion == 3) {
-                        //TODO crear funcionalidad de visualizar libros
+                        System.out.println("---- LIBROS ----");
+
+                        /*for (Libros a : libros) {
+                            System.out.println(a.getIdLibro() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
+                        }*/
                     }
                 } while (accion != 4);
             }
