@@ -31,7 +31,7 @@ public class Autores {
     } //getter que devuelve el idAutor
     
     public String getNombre() { 
-        return nombre; 
+        return nombre;
     } //getter que devuelve el nombre del autor
 
 }

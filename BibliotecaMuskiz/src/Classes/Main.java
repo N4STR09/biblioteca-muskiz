@@ -81,22 +81,55 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         int opcion;
+        int accion;
 
         do {
-            System.out.println("1. Ver autores");
-            System.out.println("2. Salir");
+            System.out.println("1. Autores");
+            System.out.println("2. Libros");
+            System.out.println("3. Salir");
             opcion = sc.nextInt();
             sc.nextLine(); //limpiar buffer de entrada
 
             if (opcion == 1) {
-                System.out.println("---- AUTORES ----");
+                do {
+                    System.out.println("1. Añadir autor");
+                    System.out.println("2. Eliminar autor");
+                    System.out.println("3. Visualizar autores");
+                    System.out.println("4. Salir");
+                    accion = sc.nextInt();
+                    sc.nextLine();
+                    if (accion == 1) {
+                        //TODO crear funcionalidad de añadir autor
+                    } else if (accion == 2) {
+                        //TODO crear funcionalidad de eliminar autor
+                    } else if (accion == 3) {
+                        System.out.println("---- AUTORES ----");
 
-                for (Autores a : autores) {
-                    System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
-                }
+                        for (Autores a : autores) {
+                            System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
+                        }
+                    }
+                } while (accion != 4);
+            } else if (opcion == 2) {
+                do {
+                    System.out.println("1. Añadir libro");
+                    System.out.println("2. Eliminar libro");
+                    System.out.println("3. Visualizar libro");
+                    System.out.println("4. Salir");
+                    accion = sc.nextInt();
+                    sc.nextLine();
+
+                    if (accion == 1) {
+                        //TODO crear funcionalidad de añadir libro
+                    } else if (accion == 2) {
+                        //TODO crear funcionalidad de eliminar libro
+                    } else if (accion == 3) {
+                        //TODO crear funcionalidad de visualizar libros
+                    }
+                } while (accion != 4);
             }
 
-        } while (opcion != 2);
+        } while (opcion != 3);
         sc.close(); //cerramos el scanner para evitar que IDE nos tire un warning de posible data leakage si no lo cerramos
     }
 }
