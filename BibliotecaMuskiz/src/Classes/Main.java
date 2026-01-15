@@ -98,10 +98,76 @@ public class Main {
                     System.out.println("4. Salir");
                     accion = sc.nextInt();
                     sc.nextLine();
+                    
                     if (accion == 1) {
-                        //TODO crear funcionalidad de añadir autor
+                        //solicitud de datos al usuario
+                        System.out.print("Nombre del autor: ");
+                        String nombre = sc.nextLine();
+
+                        System.out.print("Nacionalidad: ");
+                        String nacionalidad = sc.nextLine();
+
+                        System.out.print("Fecha de nacimiento (AAAA-MM-DD): ");
+                        String fechaNacimiento = sc.nextLine();
+
+                        //vamos a crear un autor que este vivo
+                        boolean defuncion = false;
+                        String fechaFallecimiento = "";
+                        //omitimos esta informacion de momento
+                        String biografia = "";
+                        String foto = "";
+                        String generoLiterario = "";
+                        String premios = "";
+                        String obrasDestacadas = "";
+
+                        int id = autores.size() + 1; //asignacion de ID automatica
+
+                        //creamos un nuevo autor
+                        Autores nuevoAutor = new Autores(
+                            id,
+                            nombre,
+                            nacionalidad,
+                            fechaNacimiento,
+                            defuncion,
+                            fechaFallecimiento,
+                            biografia,
+                            foto,
+                            generoLiterario,
+                            premios,
+                            obrasDestacadas
+                        );
+
+                        autores.add(nuevoAutor); //lo añadimos a la lista
+                        System.out.println("Autor añadido correctamente.");
+
                     } else if (accion == 2) {
-                        //TODO crear funcionalidad de eliminar autor
+                        if (autores.isEmpty()) {
+                            System.out.println("No hay autores para eliminar.");
+                        } else {
+                            System.out.println("---- AUTORES ----");
+                            for (Autores a : autores) {
+                                System.out.println(a.getIdAutor() + " - " + a.getNombre());
+                            }
+
+                            System.out.print("Introduce el ID del autor a eliminar: ");
+                            int id = sc.nextInt();
+                            sc.nextLine(); // limpiar buffer
+
+                            boolean eliminado = false;
+
+                            for (int i = 0; i < autores.size(); i++) {
+                                if (autores.get(i).getIdAutor() == id) {
+                                    autores.remove(i);
+                                    eliminado = true;
+                                    System.out.println("Autor eliminado correctamente.");
+                                    break;
+                                }
+                            }
+
+                            if (!eliminado) {
+                                System.out.println("No se encontró ningún autor con ese ID.");
+                            }
+                        }
                     } else if (accion == 3) {
                         System.out.println("---- AUTORES ----");
 
