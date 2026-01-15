@@ -25,4 +25,13 @@ public class Autores {
         this.premios = premios;
         this.obrasDestacadas = obrasDestacadas;
     }
+
+    public int getIdAutor() { 
+        return idAutor; 
+    } //getter que devuelve el idAutor
+    
+    public String getNombre() { 
+        return nombre; 
+    } //getter que devuelve el nombre del autor
+
 }
