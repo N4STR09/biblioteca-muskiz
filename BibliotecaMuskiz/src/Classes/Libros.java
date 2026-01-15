@@ -40,5 +40,5 @@ public class Libros {
     
     /*public String getAutor() { 
         return autor;
-    } //getter que devuelve el nombre del autor */
+    } //getter que devuelve el nombre del autor*/
 }

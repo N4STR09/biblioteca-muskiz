@@ -210,8 +210,27 @@ public class Main {
                         System.out.print("Titulo del libro: ");
                         String titulo = sc.nextLine();
 
-                        System.out.print("Autor del libro: ");
-                        String autor = sc.nextLine();
+                        System.out.println("Elige el autor del libro por ID:");
+                        for (Autores a : autores) {
+                            System.out.println(a.getIdAutor() + " - " + a.getNombre());
+                        }
+
+                        System.out.print("ID del autor: ");
+                        int idAutor = sc.nextInt();
+                        sc.nextLine(); // limpiar buffer
+
+                        Autores autorElegido = null;
+                        for (Autores a : autores) {
+                            if (a.getIdAutor() == idAutor) {
+                                autorElegido = a;
+                                break;
+                            }
+                        }
+                        
+                        if (autorElegido == null) {
+                            System.out.println("Autor no encontrado. Libro no creado.");
+                            return; // o continue si estás en un menú
+                        }
 
                         System.out.print("Género del libro: ");
                         String genero = sc.nextLine();
@@ -231,12 +250,12 @@ public class Main {
                         int id = libros.size() + 1; //asignacion de ID automatica
 
                         //creamos un nuevo autor
-                        /*Libros nuevoLibro = new Libros(
+                        Libros nuevoLibro = new Libros(
                             id,
                             existencias,
                             numeroPaginas,
                             titulo,
-                            autor,
+                            autorElegido,
                             genero,
                             anioPublicacion,
                             editorial,
