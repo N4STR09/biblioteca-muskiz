@@ -36,13 +36,43 @@ public class Libros {
 
     public int getIdLibro() { 
         return idLibro; 
-    } //getter que devuelve el idLibro
+    }
+
+    public void setIdLibro(int idLibro) {
+        this.idLibro = idLibro;
+    }
 
     public String getTitulo() {
         return titulo;
     }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
     
     public String getAutor() { 
         return autor.getNombre();
-    } //getter que devuelve el nombre del autor
+    }
+
+    public void setAutor(Autores autor) {
+        this.autor = autor;
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return super.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        return super.equals(obj);
+    }
 }

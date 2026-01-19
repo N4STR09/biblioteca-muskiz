@@ -28,10 +28,35 @@ public class Autores {
 
     public int getIdAutor() { 
         return idAutor; 
-    } //getter que devuelve el idAutor
-    
+    }
+
+    public void setIdAutor(int idAutor) {
+        this.idAutor = idAutor;
+    }
+
     public String getNombre() { 
         return nombre;
-    } //getter que devuelve el nombre del autor
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return super.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return super.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        return super.equals(obj);
+    }
 }
