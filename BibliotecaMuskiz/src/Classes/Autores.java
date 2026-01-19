@@ -42,21 +42,90 @@ public class Autores {
         this.nombre = nombre;
     }
 
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public boolean getDefuncion(){
+        return defuncion;
+    }
+
+    public void setDefuncion(boolean defuncion){
+        this.defuncion = defuncion;
+    }
+
+    public String getFechaFallecimiento() {
+        return fechaFallecimiento;
+    }
+
+    public void setFechaFallecimiento(String fechaFallecimiento) {
+        this.fechaFallecimiento = fechaFallecimiento;
+    }
+
+    public String getBiografia() {
+        return biografia;
+    }
+
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getGeneroLiterario() {
+        return generoLiterario;
+    }
+
+    public void setGeneroLiterario(String generoLiterario) {
+        this.generoLiterario = generoLiterario;
+    }
+
+    public String getPremios() {
+        return premios;
+    }
+
+    public void setPremios(String premios) {
+        this.premios = premios;
+    }
+
+    public String getObrasDestacadas() {
+        return obrasDestacadas;
+    }
+
+    public void setObrasDestacadas(String obrasDestacadas) {
+        this.obrasDestacadas = obrasDestacadas;
+    }
+
     @Override
     public int hashCode() {
-        // TODO Auto-generated method stub
         return super.hashCode();
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return super.toString();
     }
 
     @Override
     public boolean equals(Object obj) {
-        // TODO Auto-generated method stub
         return super.equals(obj);
     }
 }
