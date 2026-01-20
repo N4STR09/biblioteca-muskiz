@@ -228,7 +228,8 @@ public class Main {
                         System.out.println("1. Añadir libro");
                         System.out.println("2. Eliminar libro");
                         System.out.println("3. Visualizar libro");
-                        System.out.println("4. Salir");
+                        System.out.println("4. Estadisticas");
+                        System.out.println("5. Salir");
                         accion = sc.nextInt();
                         sc.nextLine();
 
@@ -319,7 +320,7 @@ public class Main {
                                             libros.remove(i);
                                             eliminado = true;
                                             System.out.println("Libro eliminado correctamente.");
-                                            break; // importantísimo
+                                            break;
                                         }
                                     }
 
@@ -335,12 +336,115 @@ public class Main {
                                     System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
                                 }
                                 break;
+                            case 4:
+                                System.out.println("---- ESTADISTICAS ----");
+                                System.out.println("1. Estadisticas páginas");
+                                System.out.println("2. Estadisticas existencias");
+                                System.out.println("3. Otras Estadisticas");
+                                System.out.println("4. Salir");
+                                int tipo = sc.nextInt();
+                                int stat;
+
+                                switch (tipo) {
+                                    case 1:
+                                        System.out.println("1. Media de Paginas");
+                                        System.out.println("2. Maximo de Paginas");
+                                        System.out.println("3. Minimo de Paginas");
+                                        System.out.println("4. Salir");
+                                        stat = sc.nextInt();
+
+                                        switch (stat) {
+                                            case 1:
+                                                double media = UtilidadesLibros.mediaPaginas(libros);
+                                                System.out.println("Media de páginas: " + media);
+                                                break;
+                                            
+                                            case 2:
+                                                Libros max = UtilidadesLibros.maxPaginas(libros);
+                                                System.out.println("El libro con mas paginas es " + max.getTitulo() + " con " + max.getNumeroPaginas() + " páginas.");
+                                                break;
+                                            
+                                            case 3:
+                                                Libros min = UtilidadesLibros.minPaginas(libros);
+                                                System.out.println("El libro con menos paginas es " + min.getTitulo() + " con " + min.getNumeroPaginas() + " páginas.");
+                                                break;
+
+                                            default:
+                                                System.out.println("Opción no valida.");
+                                                break;
+                                        }
+                                        break;
+                                    case 2:
+                                        System.out.println("1. Media de Existencias");
+                                        System.out.println("2. Maximo de Existencias");
+                                        System.out.println("3. Minimo de Existencias");
+                                        System.out.println("4. Salir");
+                                        stat = sc.nextInt();
+
+                                        switch (stat) {
+                                            case 1:
+                                                double media = UtilidadesLibros.mediaExistencias(libros);
+                                                System.out.println("Media de existencias: " + media);
+                                                break;
+                                            
+                                            case 2:
+                                                Libros max = UtilidadesLibros.maxExistencias(libros);
+                                                System.out.println("El libro con mas existencias es " + max.getTitulo() + " con " + max.getExistencias() + " existencias.");
+                                                break;
+                                            
+                                            case 3:
+                                                Libros min = UtilidadesLibros.minExistencias(libros);
+                                                System.out.println("El libro con menos existencias es " + min.getTitulo() + " con " + min.getExistencias() + " existencias.");
+                                                break;
+
+                                            default:
+                                                System.out.println("Opción no valida.");
+                                                break;
+                                        }
+                                        break;
+                                    case 3:
+                                        System.out.println("1. Porcentaje de libros disponibles");
+                                        System.out.println("2. Cantidad de libros por género");
+                                        System.out.println("3. Numero total de libros");
+                                        System.out.println("4. Salir");
+                                        stat = sc.nextInt();
+
+                                        switch (stat) {
+                                            case 1:
+                                                double porcentaje = UtilidadesLibros.porcentajeDisponibles(libros);
+                                                System.out.println("Porcentaje de libros disponibles: " + porcentaje + "%");
+                                                break;
+                                            
+                                            case 2:
+                                                System.out.println("Cantidad de libros por género:");
+                                                var porGenero = UtilidadesLibros.librosPorGenero(libros);
+                                                for (String tgenero : porGenero.keySet()) {
+                                                    System.out.println(tgenero + ": " + porGenero.get(tgenero));
+                                                }
+                                                break;
+                                            
+                                            case 3:
+                                                int total = UtilidadesLibros.totalLibros(libros);
+                                                System.out.println("Número total de libros: " + total);
+                                                break;
+
+                                            default:
+                                                System.out.println("Opción no valida.");
+                                                break;
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                break;
                             }
-                        } while (accion != 4);
+                        } while (accion != 5);
                     break;
                 default:
-                    System.out.println("Esa opción no es valida. Introduce una opción permitida.");
-                    break;
+                    if (opcion != 3) {
+                        System.out.println("Esa opción no es valida. Introduce una opción permitida.");
+                    }
+                        break;
             }
         } while (opcion != 3);
         sc.close(); //cerramos el scanner para evitar que IDE nos tire un warning de posible data leakage si no lo cerramos

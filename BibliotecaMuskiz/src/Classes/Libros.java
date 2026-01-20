@@ -146,7 +146,7 @@ public class Libros {
         this.categoria = categoria;
     }
 
-    public Boolean getDisponibilidad(){
+    public boolean isDisponibilidad() {
         return disponibilidad;
     }
 
