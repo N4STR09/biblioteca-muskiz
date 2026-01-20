@@ -135,205 +135,216 @@ public class Main {
             opcion = sc.nextInt();
             sc.nextLine(); //limpiar buffer de entrada
 
-            if (opcion == 1) {
-                do {
-                    System.out.println("1. Añadir autor");
-                    System.out.println("2. Eliminar autor");
-                    System.out.println("3. Visualizar autores");
-                    System.out.println("4. Salir");
-                    accion = sc.nextInt();
-                    sc.nextLine();
-                    
-                    if (accion == 1) {
-                        //solicitud de datos al usuario
-                        System.out.print("Nombre del autor: ");
-                        String nombre = sc.nextLine();
+            switch (opcion) {
+                case 1:
+                    do {
+                        System.out.println("1. Añadir autor");
+                        System.out.println("2. Eliminar autor");
+                        System.out.println("3. Visualizar autores");
+                        System.out.println("4. Salir");
+                        accion = sc.nextInt();
+                        sc.nextLine();
+                        
+                        if (accion == 1) {
+                            //solicitud de datos al usuario
+                            System.out.print("Nombre del autor: ");
+                            String nombre = sc.nextLine();
 
-                        System.out.print("Nacionalidad: ");
-                        String nacionalidad = sc.nextLine();
+                            System.out.print("Nacionalidad: ");
+                            String nacionalidad = sc.nextLine();
 
-                        System.out.print("Fecha de nacimiento (AAAA-MM-DD): ");
-                        String fechaNacimiento = sc.nextLine();
+                            System.out.print("Fecha de nacimiento (AAAA-MM-DD): ");
+                            String fechaNacimiento = sc.nextLine();
 
-                        //vamos a crear un autor que este vivo
-                        boolean defuncion = false;
-                        String fechaFallecimiento = "";
-                        //omitimos esta informacion de momento
-                        String biografia = "";
-                        String foto = "";
-                        String generoLiterario = "";
-                        String premios = "";
-                        String obrasDestacadas = "";
+                            //vamos a crear un autor que este vivo
+                            boolean defuncion = false;
+                            String fechaFallecimiento = "";
+                            //omitimos esta informacion de momento
+                            String biografia = "";
+                            String foto = "";
+                            String generoLiterario = "";
+                            String premios = "";
+                            String obrasDestacadas = "";
 
-                        int id = autores.size() + 1; //asignacion de ID automatica
+                            int id = autores.size() + 1; //asignacion de ID automatica
 
-                        //creamos un nuevo autor
-                        Autores nuevoAutor = new Autores(
-                            id,
-                            nombre,
-                            nacionalidad,
-                            fechaNacimiento,
-                            defuncion,
-                            fechaFallecimiento,
-                            biografia,
-                            foto,
-                            generoLiterario,
-                            premios,
-                            obrasDestacadas
-                        );
+                            //creamos un nuevo autor
+                            Autores nuevoAutor = new Autores(
+                                id,
+                                nombre,
+                                nacionalidad,
+                                fechaNacimiento,
+                                defuncion,
+                                fechaFallecimiento,
+                                biografia,
+                                foto,
+                                generoLiterario,
+                                premios,
+                                obrasDestacadas
+                            );
 
-                        autores.add(nuevoAutor); //lo añadimos a la lista
-                        System.out.println("Autor añadido correctamente.");
+                            autores.add(nuevoAutor); //lo añadimos a la lista
+                            System.out.println("Autor añadido correctamente.");
 
-                    } else if (accion == 2) {
-                        if (autores.isEmpty()) {
-                            System.out.println("No hay autores para eliminar.");
-                        } else {
-                            System.out.println("---- AUTORES ----");
-                            for (Autores a : autores) {
-                                System.out.println(a.getIdAutor() + " - " + a.getNombre());
-                            }
+                        } else if (accion == 2) {
+                            if (autores.isEmpty()) {
+                                System.out.println("No hay autores para eliminar.");
+                            } else {
+                                System.out.println("---- AUTORES ----");
+                                for (Autores a : autores) {
+                                    System.out.println(a.getIdAutor() + " - " + a.getNombre());
+                                }
 
-                            System.out.print("Introduce el ID del autor a eliminar: ");
-                            int id = sc.nextInt();
-                            sc.nextLine(); // limpiar buffer
+                                System.out.print("Introduce el ID del autor a eliminar: ");
+                                int id = sc.nextInt();
+                                sc.nextLine(); // limpiar buffer
 
-                            boolean eliminado = false;
+                                boolean eliminado = false;
 
-                            for (int i = 0; i < autores.size(); i++) {
-                                if (autores.get(i).getIdAutor() == id) {
-                                    autores.remove(i);
-                                    eliminado = true;
-                                    System.out.println("Autor eliminado correctamente.");
-                                    break;
+                                for (int i = 0; i < autores.size(); i++) {
+                                    if (autores.get(i).getIdAutor() == id) {
+                                        autores.remove(i);
+                                        eliminado = true;
+                                        System.out.println("Autor eliminado correctamente.");
+                                        break;
+                                    }
+                                }
+
+                                if (!eliminado) {
+                                    System.out.println("No se encontró ningún autor con ese ID.");
                                 }
                             }
+                        } else if (accion == 3) {
+                            System.out.println("---- AUTORES ----");
 
-                            if (!eliminado) {
-                                System.out.println("No se encontró ningún autor con ese ID.");
+                            for (Autores a : autores) {
+                                System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
                             }
                         }
-                    } else if (accion == 3) {
-                        System.out.println("---- AUTORES ----");
+                    } while (accion != 4);
+                    break;
+                case 2:
+                    do {
+                        System.out.println("1. Añadir libro");
+                        System.out.println("2. Eliminar libro");
+                        System.out.println("3. Visualizar libro");
+                        System.out.println("4. Salir");
+                        accion = sc.nextInt();
+                        sc.nextLine();
 
-                        for (Autores a : autores) {
-                            System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
-                        }
-                    }
-                } while (accion != 4);
-            } else if (opcion == 2) {
-                do {
-                    System.out.println("1. Añadir libro");
-                    System.out.println("2. Eliminar libro");
-                    System.out.println("3. Visualizar libro");
-                    System.out.println("4. Salir");
-                    accion = sc.nextInt();
-                    sc.nextLine();
+                        switch (accion) {
+                            case 1:
+                                //solicitud de datos al usuario
+                                System.out.print("Titulo del libro: ");
+                                String titulo = sc.nextLine();
 
-                    if (accion == 1) {
-                        //solicitud de datos al usuario
-                        System.out.print("Titulo del libro: ");
-                        String titulo = sc.nextLine();
+                                System.out.println("Elige el autor del libro por ID:");
+                                for (Autores a : autores) {
+                                    System.out.println(a.getIdAutor() + " - " + a.getNombre());
+                                }
 
-                        System.out.println("Elige el autor del libro por ID:");
-                        for (Autores a : autores) {
-                            System.out.println(a.getIdAutor() + " - " + a.getNombre());
-                        }
+                                System.out.print("ID del autor: ");
+                                int idAutor = sc.nextInt();
+                                sc.nextLine(); // limpiar buffer
 
-                        System.out.print("ID del autor: ");
-                        int idAutor = sc.nextInt();
-                        sc.nextLine(); // limpiar buffer
+                                Autores autorElegido = null;
+                                for (Autores a : autores) {
+                                    if (a.getIdAutor() == idAutor) {
+                                        autorElegido = a;
+                                        break;
+                                    }
+                                }
+                                
+                                if (autorElegido == null) {
+                                    System.out.println("Autor no encontrado. Libro no creado.");
+                                    continue; //funciona como un return pero que no cierra el menú
+                                }
 
-                        Autores autorElegido = null;
-                        for (Autores a : autores) {
-                            if (a.getIdAutor() == idAutor) {
-                                autorElegido = a;
+                                System.out.print("Género del libro: ");
+                                String genero = sc.nextLine();
+
+                                int existencias = 1;
+                                int numeroPaginas = 1;
+                                String anioPublicacion = "";
+                                String editorial = "";
+                                String isbn = "";
+                                String idioma = "";
+                                String formato = "";
+                                String portada = ""; 
+                                String descripcion = "";
+                                String categoria = ""; 
+                                boolean disponibilidad = true;
+
+                                int id = libros.size() + 1; //asignacion de ID automatica
+
+                                //creamos un nuevo autor
+                                Libros nuevoLibro = new Libros(
+                                    id,
+                                    existencias,
+                                    numeroPaginas,
+                                    titulo,
+                                    autorElegido,
+                                    genero,
+                                    anioPublicacion,
+                                    editorial,
+                                    isbn,
+                                    idioma,
+                                    formato,
+                                    portada,
+                                    descripcion,
+                                    categoria,
+                                    disponibilidad
+                                );
+
+                                libros.add(nuevoLibro); //lo añadimos a la lista
+                                System.out.println("Libro añadido correctamente.");
+                                break;
+                            case 2:
+                                if (libros.isEmpty()) {
+                                    System.out.println("No hay libros para eliminar.");
+                                } else {
+                                    System.out.println("---- LIBROS ----");
+                                    for (Libros a : libros) {
+                                        System.out.println(a.getIdLibro() + " - " + a.getTitulo());
+                                    }
+
+                                    System.out.print("Introduce el ID del libro a eliminar: ");
+                                    int idLibroEliminar = sc.nextInt();
+                                    sc.nextLine(); // limpiar buffer
+
+                                    boolean eliminado = false;
+
+                                    for (int i = 0; i < libros.size(); i++) {
+                                        if (libros.get(i).getIdLibro() == idLibroEliminar) {
+                                            libros.remove(i);
+                                            eliminado = true;
+                                            System.out.println("Libro eliminado correctamente.");
+                                            break; // importantísimo
+                                        }
+                                    }
+
+                                    if (!eliminado) {
+                                        System.out.println("No se encontró ningún libro con ese ID.");
+                                    }
+                                }
+                                break;
+                            case 3:
+                                System.out.println("---- LIBROS ----");
+
+                                for (Libros a : libros) {
+                                    System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
+                                }
                                 break;
                             }
-                        }
-                        
-                        if (autorElegido == null) {
-                            System.out.println("Autor no encontrado. Libro no creado.");
-                            continue; //funciona como un return pero que no cierra el menú
-                        }
-
-                        System.out.print("Género del libro: ");
-                        String genero = sc.nextLine();
-
-                        int existencias = 1;
-                        int numeroPaginas = 1;
-                        String anioPublicacion = "";
-                        String editorial = "";
-                        String isbn = "";
-                        String idioma = "";
-                        String formato = "";
-                        String portada = ""; 
-                        String descripcion = "";
-                        String categoria = ""; 
-                        boolean disponibilidad = true;
-
-                        int id = libros.size() + 1; //asignacion de ID automatica
-
-                        //creamos un nuevo autor
-                        Libros nuevoLibro = new Libros(
-                            id,
-                            existencias,
-                            numeroPaginas,
-                            titulo,
-                            autorElegido,
-                            genero,
-                            anioPublicacion,
-                            editorial,
-                            isbn,
-                            idioma,
-                            formato,
-                            portada,
-                            descripcion,
-                            categoria,
-                            disponibilidad
-                        );
-
-                        libros.add(nuevoLibro); //lo añadimos a la lista
-                        System.out.println("Libro añadido correctamente.");
-                    } else if (accion == 2) {
-                        if (libros.isEmpty()) {
-                            System.out.println("No hay libros para eliminar.");
-                        } else {
-                            System.out.println("---- LIBROS ----");
-                            for (Libros a : libros) {
-                                System.out.println(a.getIdLibro() + " - " + a.getTitulo());
-                            }
-
-                            System.out.print("Introduce el ID del libro a eliminar: ");
-                            int id = sc.nextInt();
-                            sc.nextLine(); // limpiar buffer
-
-                            boolean eliminado = false;
-
-                            for (int i = 0; i < libros.size(); i++) {
-                                if (libros.get(i).getIdLibro() == id) {
-                                    libros.remove(i);
-                                    eliminado = true;
-                                    System.out.println("Libro eliminado correctamente.");
-                                    break;
-                                }
-                            }
-
-                            if (!eliminado) {
-                                System.out.println("No se encontró ningún libro con ese ID.");
-                            }
-                        }
-                    } else if (accion == 3) {
-                        System.out.println("---- LIBROS ----");
-
-                        for (Libros a : libros) {
-                            System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
-                        }
-                    }
-                } while (accion != 4);
+                        } while (accion != 4);
+                    break;
+                default:
+                    System.out.println("Esa opción no es valida. Introduce una opción permitida.");
+                    break;
             }
         } while (opcion != 3);
         sc.close(); //cerramos el scanner para evitar que IDE nos tire un warning de posible data leakage si no lo cerramos
     }
 }
+
 
