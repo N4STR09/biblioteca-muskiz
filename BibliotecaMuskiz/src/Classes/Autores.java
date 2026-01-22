@@ -1,4 +1,8 @@
 package Classes;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Autores {
     private int idAutor;
     private String nombre;
@@ -12,22 +16,35 @@ public class Autores {
     private String generoLiterario;
     private String premios;
     private String obrasDestacadas;
-    private Libros idLibros;
+    private List<Integer> librosEscritos;
 
-    public Autores(int idAutor, String nombre, String nacionalidad, String fechaNacimiento, boolean defuncion, String fechaFallecimiento, int edad, String biografia, String foto, String generoLiterario, String premios, String obrasDestacadas, Libros idLibros) {
+    public Autores(int idAutor, String nombre, String nacionalidad, String fechaNacimiento,
+                boolean defuncion, String fechaFallecimiento, String biografia, String foto,
+                String generoLiterario, String premios, String obrasDestacadas) {
+                    
         this.idAutor = idAutor;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
         this.fechaNacimiento = fechaNacimiento;
         this.defuncion = defuncion;
         this.fechaFallecimiento = fechaFallecimiento;
-        this.edad = edad;
         this.biografia = biografia;
         this.foto = foto;
         this.generoLiterario = generoLiterario;
         this.premios = premios;
         this.obrasDestacadas = obrasDestacadas;
-        this.idLibros = idLibros;
+
+        this.librosEscritos = new ArrayList<>(); // inicializamos la lista vacía
+    }
+
+    // GETTER para librosEscritos
+    public List<Integer> getLibrosEscritos() {
+        return librosEscritos;
+    }
+
+    // MÉTODO para añadir un libro
+    public void addLibro(int idLibro) {
+        librosEscritos.add(idLibro);
     }
 
     public int getIdAutor() { 
@@ -126,13 +143,13 @@ public class Autores {
         this.obrasDestacadas = obrasDestacadas;
     }
 
-    public Libros getIdLibros() {
+    /*public Libros getIdLibros() {
         return idLibro;
     }
 
     public void setIdLibros(Libros idLibro) {
         this.idLibro = idLibro;
-    }
+    }*/
 
     @Override
     public int hashCode() {

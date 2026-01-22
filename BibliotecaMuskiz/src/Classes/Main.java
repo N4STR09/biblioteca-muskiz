@@ -19,8 +19,7 @@ public class Main {
             "cervantes.jpg", // foto
             "Novela", // generoLiterario
             "Ninguno", // premios
-            "Don Quijote", // obrasDestacadas
-            libro1
+            "Don Quijote" // obrasDestacadas
         );
         Autores autor2 = new Autores(
             2,
@@ -277,7 +276,7 @@ public class Main {
                                 String categoria = ""; 
                                 boolean disponibilidad = true;
 
-                                int id = libros.size() + 1; //asignacion de ID automatica
+                                int id = libros.size() + 1; 
 
                                 //creamos un nuevo autor
                                 Libros nuevoLibro = new Libros(
@@ -298,7 +297,9 @@ public class Main {
                                     disponibilidad
                                 );
 
-                                libros.add(nuevoLibro); //lo añadimos a la lista
+                                libros.add(nuevoLibro);
+                                autorElegido.addLibro(id);
+                                
                                 System.out.println("Libro añadido correctamente.");
                                 break;
                             case 2:
