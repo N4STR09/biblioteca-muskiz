@@ -6,24 +6,28 @@ public class Autores {
     private String fechaNacimiento;
     private boolean defuncion;
     private String fechaFallecimiento;
+    private int edad;
     private String biografia;
     private String foto;
     private String generoLiterario;
     private String premios;
     private String obrasDestacadas;
+    private Libros idLibros;
 
-    public Autores(int idAutor, String nombre, String nacionalidad, String fechaNacimiento, boolean defuncion, String fechaFallecimiento, String biografia, String foto, String generoLiterario, String premios, String obrasDestacadas) {
+    public Autores(int idAutor, String nombre, String nacionalidad, String fechaNacimiento, boolean defuncion, String fechaFallecimiento, int edad, String biografia, String foto, String generoLiterario, String premios, String obrasDestacadas, Libros idLibros) {
         this.idAutor = idAutor;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
         this.fechaNacimiento = fechaNacimiento;
         this.defuncion = defuncion;
         this.fechaFallecimiento = fechaFallecimiento;
+        this.edad = edad;
         this.biografia = biografia;
         this.foto = foto;
         this.generoLiterario = generoLiterario;
         this.premios = premios;
         this.obrasDestacadas = obrasDestacadas;
+        this.idLibros = idLibros;
     }
 
     public int getIdAutor() { 
@@ -74,6 +78,14 @@ public class Autores {
         this.fechaFallecimiento = fechaFallecimiento;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     public String getBiografia() {
         return biografia;
     }
@@ -112,6 +124,14 @@ public class Autores {
 
     public void setObrasDestacadas(String obrasDestacadas) {
         this.obrasDestacadas = obrasDestacadas;
+    }
+
+    public Libros getIdLibros() {
+        return idLibro;
+    }
+
+    public void setIdLibros(Libros idLibro) {
+        this.idLibro = idLibro;
     }
 
     @Override

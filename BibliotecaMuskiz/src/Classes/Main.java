@@ -19,7 +19,8 @@ public class Main {
             "cervantes.jpg", // foto
             "Novela", // generoLiterario
             "Ninguno", // premios
-            "Don Quijote" // obrasDestacadas
+            "Don Quijote", // obrasDestacadas
+            libro1
         );
         Autores autor2 = new Autores(
             2,
