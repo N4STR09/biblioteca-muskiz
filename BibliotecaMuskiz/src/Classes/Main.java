@@ -124,6 +124,12 @@ public class Main {
         libros.add(new Libros(19, 2, 304, "Pantaleón y las visitadoras", autor5, "Novela", "1973", "Seix Barral", "", "Español", "Físico", "", "", "Literatura", true));
         libros.add(new Libros(20, 1, 288, "La fiesta del chivo", autor5, "Novela", "2000", "Alfaguara", "", "Español", "Físico", "", "", "Literatura", true));
 
+
+        for (Libros libro : libros) {
+            if (libro.getAutorObj().getIdAutor() == autor1.getIdAutor()) {
+                autor1.addLibro(libro.getIdLibro());
+            }
+        }
         Scanner sc = new Scanner(System.in);
         int opcion;
         int accion;
@@ -277,7 +283,7 @@ public class Main {
                                 boolean disponibilidad = true;
 
                                 int id = libros.size() + 1; 
-
+                                
                                 //creamos un nuevo autor
                                 Libros nuevoLibro = new Libros(
                                     id,
@@ -298,8 +304,9 @@ public class Main {
                                 );
 
                                 libros.add(nuevoLibro);
-                                autorElegido.addLibro(id);
-                                
+
+                                autorElegido.addLibro(nuevoLibro.getIdLibro());
+
                                 System.out.println("Libro añadido correctamente.");
                                 break;
                             case 2:
