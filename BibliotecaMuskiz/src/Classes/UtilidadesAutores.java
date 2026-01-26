@@ -25,7 +25,7 @@ public class UtilidadesAutores {
     //Total de Autores en la biblioteca
 
     //autor con más libros
-    public static String autorMasLibros(List<Autores> autores) {
+    public static Autores autorMasLibros(List<Autores> autores) {
         if (autores == null || autores.isEmpty()) {
             return null;
         }
@@ -35,11 +35,11 @@ public class UtilidadesAutores {
                 maxAutor = a;
             }
         }
-        return maxAutor.getNombre();
+        return maxAutor;
     }
 
     //autor con menos libros
-    public static String autorMenosLibros(List<Autores> autores) {
+    public static Autores autorMenosLibros(List<Autores> autores) {
             if (autores == null || autores.isEmpty()) {
                 return null;
             }
@@ -49,7 +49,7 @@ public class UtilidadesAutores {
                     minAutor = a;
                 }
             }
-            return minAutor.getNombre();
+            return minAutor;
     }
 
     //autor con el libros mas largo
