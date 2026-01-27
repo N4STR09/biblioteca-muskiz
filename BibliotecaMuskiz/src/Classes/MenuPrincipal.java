@@ -25,7 +25,7 @@ public class MenuPrincipal {
                     if (opcion != 3) {
                         System.out.println("Esa opción no es valida. Introduce una opción permitida.");
                     }
-                        break;
+                    break;
             }
         } while (opcion != 3);
     }

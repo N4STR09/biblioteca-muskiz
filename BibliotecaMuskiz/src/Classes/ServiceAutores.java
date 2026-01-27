@@ -105,11 +105,11 @@ public class ServiceAutores {
                 switch (stat) {
                     case 1:
                         Autores max = UtilidadesAutores.autorMasLibros(autores);
-                        System.out.println("El autor con más libros en la biblioteca es " + max.getNombre() + " con " + UtilidadesAutores.autorMasLibros(autores) + " libros");
+                        System.out.println("El autor con más libros en la biblioteca es " + max.getNombre() + " con " + max.getLibrosEscritos().size() + " libros");
                         break;
                     case 2:
                         Autores min = UtilidadesAutores.autorMenosLibros(autores);
-                        System.out.println("El autor con menos libros en la biblioteca es " + min.getNombre() + " con " + UtilidadesAutores.autorMenosLibros(autores) + " páginas.");
+                        System.out.println("El autor con menos libros en la biblioteca es " + min.getNombre() + " con " + min.getLibrosEscritos().size() + " libros.");
                         break;
                     default:
                         System.out.println("Opción no valida.");
