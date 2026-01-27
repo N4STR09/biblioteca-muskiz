@@ -37,7 +37,6 @@ public class UtilidadesAutores {
 
         int minLibros = 0;
 
-        //calcular maximo
         for (Autores a : autores) {
             int numLibros = a.getLibrosEscritos().size();
             if (numLibros < minLibros) {
@@ -45,7 +44,6 @@ public class UtilidadesAutores {
             }
         }
 
-        //obtener autores con maximo
         for (Autores a : autores) {
             if (a.getLibrosEscritos().size() == minLibros) {
                 resultado.add(a);
@@ -54,54 +52,80 @@ public class UtilidadesAutores {
 
         return resultado;
     }
-    /*public static Autores autorMenosLibros(List<Autores> autores) {
-            if (autores == null || autores.isEmpty()) {
-                return null;
-            }
-            Autores minAutor = autores.get(0);
-            for (Autores a : autores) {
-                if (a.getLibrosEscritos().size() < minAutor.getLibrosEscritos().size()) {
-                    minAutor = a;
-                }
-            }
-            return minAutor;
-    }*/
 
     //autor con el libros mas largo
-    public static String autorLibroMasLargo(List<Autores> autores, List<Libros> libros) {
-        Autores maxAutor = null;
+    public static List<Autores> autoresLibroMasLargo(List<Autores> autores, List<Libros> libros) {
+        List<Autores> resultado = new ArrayList<>();
+        if (autores == null || autores.isEmpty() || libros == null || libros.isEmpty()) return resultado;
+
         int maxPaginas = -1;
 
+        //numero maximo de paginas
         for (Autores a : autores) {
             for (int idLibro : a.getLibrosEscritos()) {
-                Libros l = libros.stream().filter(lib -> lib.getIdLibro() == idLibro).findFirst().orElse(null);
+                Libros l = libros.stream()
+                                .filter(lib -> lib.getIdLibro() == idLibro)
+                                .findFirst()
+                                .orElse(null);
                 if (l != null && l.getNumeroPaginas() > maxPaginas) {
                     maxPaginas = l.getNumeroPaginas();
-                    maxAutor = a;
                 }
             }
         }
 
-        return maxAutor != null ? maxAutor.getNombre() : null;
+        //autores con un libro con max
+        for (Autores a : autores) {
+            for (int idLibro : a.getLibrosEscritos()) {
+                Libros l = libros.stream()
+                                .filter(lib -> lib.getIdLibro() == idLibro)
+                                .findFirst()
+                                .orElse(null);
+                if (l != null && l.getNumeroPaginas() == maxPaginas) {
+                    resultado.add(a);
+                    break;
+                }
+            }
+        }
+
+        return resultado;
     }
 
+
     //autor con el libros mas corto
-    public static String autorLibroMasCorto(List<Autores> autores, List<Libros> libros) {
-        Autores minAutor = null;
-        int minPaginas = -1;
+    public static List<Autores> autoresLibroMasCorto(List<Autores> autores, List<Libros> libros) {
+        List<Autores> resultado = new ArrayList<>();
+        if (autores == null || autores.isEmpty() || libros == null || libros.isEmpty()) return resultado;
+
+        int minPaginas = 1000000;
 
         for (Autores a : autores) {
             for (int idLibro : a.getLibrosEscritos()) {
-                Libros l = libros.stream().filter(lib -> lib.getIdLibro() == idLibro).findFirst().orElse(null);
+                Libros l = libros.stream()
+                                .filter(lib -> lib.getIdLibro() == idLibro)
+                                .findFirst()
+                                .orElse(null);
                 if (l != null && l.getNumeroPaginas() < minPaginas) {
                     minPaginas = l.getNumeroPaginas();
-                    minAutor = a;
                 }
             }
         }
 
-        return minAutor != null ? minAutor.getNombre() : null;
+        for (Autores a : autores) {
+            for (int idLibro : a.getLibrosEscritos()) {
+                Libros l = libros.stream()
+                                .filter(lib -> lib.getIdLibro() == idLibro)
+                                .findFirst()
+                                .orElse(null);
+                if (l != null && l.getNumeroPaginas() == minPaginas) {
+                    resultado.add(a);
+                    break;
+                }
+            }
+        }
+
+        return resultado;
     }
+
 
     //autor más viejo
     public static String autorMasViejo(List<Autores> autores) {

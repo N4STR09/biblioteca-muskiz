@@ -1,6 +1,7 @@
 package Classes;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ServiceAutores {
@@ -148,12 +149,43 @@ public class ServiceAutores {
 
                 switch (stat) {
                     case 1:
-                        String max = UtilidadesAutores.autorLibroMasLargo(autores, libros);
-                        System.out.println("El autor con el libro más largo es " + max);
+                        List<Autores> autoresMaxLibro = UtilidadesAutores.autoresLibroMasLargo(autores, libros);
+
+                        if (autoresMaxLibro.isEmpty()) {
+                            System.out.println("No hay autores o libros en la biblioteca.");
+                        } else {
+                            int maxPaginas = autoresMaxLibro.get(0).getLibrosEscritos().stream()
+                                                            .map(id -> libros.stream().filter(lib -> lib.getIdLibro() == id)
+                                                            .findFirst().orElse(null))
+                                                            .filter(Objects::nonNull)
+                                                            .mapToInt(Libros::getNumeroPaginas)
+                                                            .max().orElse(0);
+
+                            System.out.println("Autor/es con libro más largo (" + maxPaginas + " páginas)");
+                            for (Autores a : autoresMaxLibro) {
+                                System.out.println("- " + a.getNombre());
+                            }
+                        }
+
                         break;
                     case 2:
-                        String min = UtilidadesAutores.autorLibroMasCorto(autores, libros);
-                        System.out.println("El autor con el libro más corto es " + min);
+                        List<Autores> autoresMinLibro = UtilidadesAutores.autoresLibroMasCorto(autores, libros);
+
+                        if (autoresMinLibro.isEmpty()) {
+                            System.out.println("No hay autores o libros en la biblioteca.");
+                        } else {
+                            int minPaginas = autoresMinLibro.get(0).getLibrosEscritos().stream()
+                                                            .map(id -> libros.stream().filter(lib -> lib.getIdLibro() == id)
+                                                            .findFirst().orElse(null))
+                                                            .filter(Objects::nonNull)
+                                                            .mapToInt(Libros::getNumeroPaginas)
+                                                            .max().orElse(0);
+
+                            System.out.println("Autor/es con libro más corto (" + minPaginas + " páginas)");
+                            for (Autores a : autoresMinLibro) {
+                                System.out.println("- " + a.getNombre());
+                            }
+                        }
                         break;
                     default:
                         System.out.println("Opción no valida.");
