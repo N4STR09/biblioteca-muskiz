@@ -37,15 +37,21 @@ public class Autores {
         this.librosEscritos = new ArrayList<>(); // inicializamos la lista vacía
     }
 
-    // GETTER para librosEscritos
+    //getter para librosEscritos
     public List<Integer> getLibrosEscritos() {
         return librosEscritos;
     }
 
-    // MÉTODO para añadir un libro
+    //setter para añadir un libro
     public void addLibro(int idLibro) {
         librosEscritos.add(idLibro);
     }
+
+    //getter para obtener el numero de libros de un autor
+    public int getNumeroLibros() {
+        return librosEscritos.size();
+    }
+
 
     public int getIdAutor() { 
         return idAutor; 

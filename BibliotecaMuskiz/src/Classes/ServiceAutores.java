@@ -104,12 +104,36 @@ public class ServiceAutores {
 
                 switch (stat) {
                     case 1:
-                        Autores max = UtilidadesAutores.autorMasLibros(autores);
-                        System.out.println("El autor con más libros en la biblioteca es " + max.getNombre() + " con " + max.getLibrosEscritos().size() + " libros");
+                        List<Autores> maxAutores = UtilidadesAutores.autoresConMasLibros(autores);
+
+                        if (maxAutores.isEmpty()) {
+                            System.out.println("No hay autores en la biblioteca.");
+                        } else {
+                            int maxLibros = maxAutores.get(0).getNumeroLibros();
+
+                            System.out.println("Autor/es con más libros (" + maxLibros + " libros)");
+
+                            for (Autores a : maxAutores) {
+                                System.out.println("- " + a.getNombre());
+                            }
+                        }
+
                         break;
                     case 2:
-                        Autores min = UtilidadesAutores.autorMenosLibros(autores);
-                        System.out.println("El autor con menos libros en la biblioteca es " + min.getNombre() + " con " + min.getLibrosEscritos().size() + " libros.");
+                        List<Autores> minAutores = UtilidadesAutores.autoresConMenosLibros(autores);
+                        
+                        if (minAutores.isEmpty()) {
+                            System.out.println("No hay autores en la biblioteca.");
+                        } else {
+                            int maxLibros = minAutores.get(0).getNumeroLibros();
+
+                            System.out.println("Autor/es con menos libros (" + maxLibros + " libros)");
+
+                            for (Autores a : minAutores) {
+                                System.out.println("- " + a.getNombre());
+                            }
+                        }
+
                         break;
                     default:
                         System.out.println("Opción no valida.");

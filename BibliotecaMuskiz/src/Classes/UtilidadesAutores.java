@@ -1,45 +1,60 @@
 package Classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UtilidadesAutores {
-    
-    //Bloque 1: Estadisticas de libros por autor
-    //-----------------------------
-    //Autor que más libros tiene en la biblioteca
-    //Autor que menos libros tiene en la biblioteca
-
-    //Bloque 2: Estadisticas de paginas por libro de autor
-    //-----------------------------
-    //Autor con el libro con más largo
-    //Autor con el libro con más corto
-    
-    //Bloque 3: Edades de autores
-    //-----------------------------
-    //Autor más viejo
-    //Autor más joven
-    //Edad media de los autores
-
-    //Bloque 4: Estadisticas de autores
-    //-----------------------------
-    //Total de Autores en la biblioteca
 
     //autor con más libros
-    public static Autores autorMasLibros(List<Autores> autores) {
-        if (autores == null || autores.isEmpty()) {
-            return null;
-        }
-        Autores maxAutor = autores.get(0);
+    public static List<Autores> autoresConMasLibros(List<Autores> autores) {
+        List<Autores> resultado = new ArrayList<>();
+        if (autores == null || autores.isEmpty()) return resultado;
+
+        int maxLibros = 0;
+
+        //calcular maximo
         for (Autores a : autores) {
-            if (a.getLibrosEscritos().size() > maxAutor.getLibrosEscritos().size()) {
-                maxAutor = a;
+            int numLibros = a.getLibrosEscritos().size();
+            if (numLibros > maxLibros) {
+                maxLibros = numLibros;
             }
         }
-        return maxAutor;
+
+        //obtener autores con maximo
+        for (Autores a : autores) {
+            if (a.getLibrosEscritos().size() == maxLibros) {
+                resultado.add(a);
+            }
+        }
+
+        return resultado;
     }
 
     //autor con menos libros
-    public static Autores autorMenosLibros(List<Autores> autores) {
+    public static List<Autores> autoresConMenosLibros(List<Autores> autores) {
+        List<Autores> resultado = new ArrayList<>();
+        if (autores == null || autores.isEmpty()) return resultado;
+
+        int minLibros = 0;
+
+        //calcular maximo
+        for (Autores a : autores) {
+            int numLibros = a.getLibrosEscritos().size();
+            if (numLibros < minLibros) {
+                minLibros = numLibros;
+            }
+        }
+
+        //obtener autores con maximo
+        for (Autores a : autores) {
+            if (a.getLibrosEscritos().size() == minLibros) {
+                resultado.add(a);
+            }
+        }
+
+        return resultado;
+    }
+    /*public static Autores autorMenosLibros(List<Autores> autores) {
             if (autores == null || autores.isEmpty()) {
                 return null;
             }
@@ -50,7 +65,7 @@ public class UtilidadesAutores {
                 }
             }
             return minAutor;
-    }
+    }*/
 
     //autor con el libros mas largo
     public static String autorLibroMasLargo(List<Autores> autores, List<Libros> libros) {
