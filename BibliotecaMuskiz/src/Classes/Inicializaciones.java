@@ -5,7 +5,6 @@ import java.util.List;
 public class Inicializaciones {
     public static void inicializar(List<Autores> autores, List<Libros> libros) {
 
-        // ===== AUTORES =====
         Autores autor1 = new Autores(1, "Cervantes", "Española", "1547-09-29", true,
                 "1616-04-22", "Escritor del Siglo de Oro", "cervantes.jpg",
                 "Novela", "Ninguno", "Don Quijote");
@@ -32,7 +31,7 @@ public class Inicializaciones {
         autores.add(autor4);
         autores.add(autor5);
 
-        // ===== LIBROS =====
+        
         libros.add(new Libros(1, 2, 863, "Don Quijote de la Mancha", autor1, "Novela", "1605",
                 "Francisco de Robles", "", "Español", "Físico", "", "", "Literatura", true));
 

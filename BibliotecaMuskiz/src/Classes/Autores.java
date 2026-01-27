@@ -1,5 +1,8 @@
 package Classes;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +38,18 @@ public class Autores {
         this.obrasDestacadas = obrasDestacadas;
 
         this.librosEscritos = new ArrayList<>(); // inicializamos la lista vacía
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate nacimiento = LocalDate.parse(fechaNacimiento, formatter);
+        LocalDate referencia;
+
+        if (defuncion && !fechaFallecimiento.isEmpty()) {
+            referencia = LocalDate.parse(fechaFallecimiento, formatter);
+        } else {
+            referencia = LocalDate.now();
+        }
+
+        this.edad = Period.between(nacimiento, referencia).getYears();
     }
 
     //getter para librosEscritos

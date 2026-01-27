@@ -201,12 +201,30 @@ public class ServiceAutores {
 
                 switch (stat) {
                     case 1:
-                        String max = UtilidadesAutores.autorMasViejo(autores);
-                        System.out.println("El autor más viejo es " + max);
+                        List<Autores> viejos = UtilidadesAutores.autoresMasViejos(autores);
+
+                        if (viejos.isEmpty()) {
+                            System.out.println("No hay autores en la biblioteca.");
+                        } else {
+                            System.out.println("Autor/es más viejo/s (" + viejos.get(0).getEdad() + " años)");
+                            for (Autores a : viejos) {
+                                System.out.println("- " + a.getNombre());
+                            }
+                        }
+
                         break;
                     case 2:
-                        String min = UtilidadesAutores.autorMasJoven(autores);
-                        System.out.println("El autor más joven es " + min);
+                        List<Autores> jovenes = UtilidadesAutores.autoresMasJovenes(autores);
+
+                        if (jovenes.isEmpty()) {
+                            System.out.println("No hay autores en la biblioteca.");
+                        } else {
+                            System.out.println("Autor/es más joven/es (" + jovenes.get(0).getEdad() + " años)");
+                            for (Autores a : jovenes) {
+                                System.out.println("- " + a.getNombre());
+                            }
+                        }
+
                         break;
                     case 3:
                         double media = UtilidadesAutores.edadMediaAutores(autores);

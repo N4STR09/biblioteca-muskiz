@@ -127,28 +127,53 @@ public class UtilidadesAutores {
     }
 
 
-    //autor más viejo
-    public static String autorMasViejo(List<Autores> autores) {
-        if (autores == null || autores.isEmpty()) return null;
-        int maxEdad = 0;
-        for (int i = 0; i < autores.size(); i++) {
-            if (autores.get(i).getEdad() > autores.get(maxEdad).getEdad()) {
-                maxEdad = i;
+    //autor mas viejo
+    public static List<Autores> autoresMasViejos(List<Autores> autores) {
+        List<Autores> resultado = new ArrayList<>();
+        if (autores == null || autores.isEmpty()) return resultado;
+
+        int maxEdad = -1;
+
+        //edad maxima
+        for (Autores a : autores) {
+            int edad = a.getEdad();
+            if (edad > maxEdad) {
+                maxEdad = edad;
             }
         }
-        return autores.get(maxEdad).getNombre();
+
+        //autores con edad maxima
+        for (Autores a : autores) {
+            if (a.getEdad() == maxEdad) {
+                resultado.add(a);
+            }
+        }
+
+        return resultado;
     }
 
+
     //autor más joven
-    public static String autorMasJoven(List<Autores> autores) {
-        if (autores == null || autores.isEmpty()) return null;
-        int minEdad = 0;
-        for (int i = 0; i < autores.size(); i++) {
-            if (autores.get(i).getEdad() < autores.get(minEdad).getEdad()) {
-                minEdad = i;
+    public static List<Autores> autoresMasJovenes(List<Autores> autores) {
+        List<Autores> resultado = new ArrayList<>();
+        if (autores == null || autores.isEmpty()) return resultado;
+
+        int minEdad = 1000;
+
+        for (Autores a : autores) {
+            int edad = a.getEdad();
+            if (edad < minEdad) {
+                minEdad = edad;
             }
         }
-        return autores.get(minEdad).getNombre();
+
+        for (Autores a : autores) {
+            if (a.getEdad() == minEdad) {
+                resultado.add(a);
+            }
+        }
+
+        return resultado;
     }
 
     //edad media autores
