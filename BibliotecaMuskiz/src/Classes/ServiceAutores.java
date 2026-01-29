@@ -7,11 +7,9 @@ public class ServiceAutores {
     public static void añadirAutor(Scanner sc, List<Autores> autores, List<Libros> libros) {
         
         //solicitud de datos al usuario
-        System.out.print("Nombre del autor: ");
-        String nombre = sc.nextLine();
+        String nombre = InputUtils.leerString(sc, "Nombre del autor: ");
 
-        System.out.print("Nacionalidad: ");
-        String nacionalidad = sc.nextLine();
+        String nacionalidad = InputUtils.leerString(sc, "Nacionalidad: ");
 
         System.out.print("Fecha de nacimiento (AAAA-MM-DD): ");
         String fechaNacimiento = sc.nextLine();

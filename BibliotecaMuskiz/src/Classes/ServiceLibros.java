@@ -6,7 +6,7 @@ import java.util.List;
 public class ServiceLibros {
     public static void añadirLibro(Scanner sc, List<Autores> autores, List<Libros> libros) {
         //solicitud de datos al usuario
-        String titulo = InputUtils.leerStringNoVacio(sc, "Título del libro: ");
+        String titulo = InputUtils.leerString(sc, "Título del libro: ");
 
         System.out.println("Elige el autor del libro por ID:");
         for (Autores a : autores) {
@@ -29,7 +29,7 @@ public class ServiceLibros {
             System.out.println("Autor no encontrado. Libro no creado.");
         } else {
 
-            String genero = InputUtils.leerStringNoVacio(sc, "Género del libro: ");
+            String genero = InputUtils.leerString(sc, "Género del libro: ");
 
             int existencias = 1;
             int numeroPaginas = 1;

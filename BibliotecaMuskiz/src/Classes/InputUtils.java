@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InputUtils {
 
-    public static String leerStringNoVacio(Scanner sc, String mensaje) {
+    public static String leerString(Scanner sc, String mensaje) {
         String texto;
         do {
             System.out.print(mensaje);
@@ -16,7 +16,7 @@ public class InputUtils {
         return texto;
     }
 
-    public static int leerIntPositivo(Scanner sc, String mensaje) {
+    public static int leerInt(Scanner sc, String mensaje) {
         while (true) {
             System.out.print(mensaje);
             try {
