@@ -94,8 +94,8 @@ public class Inicializaciones {
 
         //relacion autor-libros
         for (Libros libro : libros) {
-            libro.getAutorObj().addLibro(libro.getIdLibro());
+                libro.getAutorObj().addLibro(libro.getIdLibro());
         }
-    }
+}
 }
 

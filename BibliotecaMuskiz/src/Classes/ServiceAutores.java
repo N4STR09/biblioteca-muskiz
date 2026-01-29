@@ -1,7 +1,6 @@
 package Classes;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class ServiceAutores {
@@ -151,41 +150,39 @@ public class ServiceAutores {
                     case 1:
                         List<Autores> autoresMaxLibro = UtilidadesAutores.autoresLibroMasLargo(autores, libros);
 
-                        if (autoresMaxLibro.isEmpty()) {
+                        if (autoresMaxLibro == null || autoresMaxLibro.isEmpty() || libros == null || libros.isEmpty()) {
                             System.out.println("No hay autores o libros en la biblioteca.");
                         } else {
-                            int maxPaginas = autoresMaxLibro.get(0).getLibrosEscritos().stream()
-                                                            .map(id -> libros.stream().filter(lib -> lib.getIdLibro() == id)
-                                                            .findFirst().orElse(null))
-                                                            .filter(Objects::nonNull)
-                                                            .mapToInt(Libros::getNumeroPaginas)
-                                                            .max().orElse(0);
 
-                            System.out.println("Autor/es con libro más largo (" + maxPaginas + " páginas)");
+                            int maxPaginas = libros.stream()
+                                    .mapToInt(Libros::getNumeroPaginas)
+                                    .max()
+                                    .orElse(0);
+
+                            System.out.println("Autor/es con el libro más largo (" + maxPaginas + " páginas):");
                             for (Autores a : autoresMaxLibro) {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
-
                         break;
                     case 2:
                         List<Autores> autoresMinLibro = UtilidadesAutores.autoresLibroMasCorto(autores, libros);
 
-                        if (autoresMinLibro.isEmpty()) {
+                        if (autoresMinLibro == null || autoresMinLibro.isEmpty() || libros == null || libros.isEmpty()) {
                             System.out.println("No hay autores o libros en la biblioteca.");
                         } else {
-                            int minPaginas = autoresMinLibro.get(0).getLibrosEscritos().stream()
-                                                            .map(id -> libros.stream().filter(lib -> lib.getIdLibro() == id)
-                                                            .findFirst().orElse(null))
-                                                            .filter(Objects::nonNull)
-                                                            .mapToInt(Libros::getNumeroPaginas)
-                                                            .max().orElse(0);
 
-                            System.out.println("Autor/es con libro más corto (" + minPaginas + " páginas)");
+                            int minPaginas = libros.stream()
+                                    .mapToInt(Libros::getNumeroPaginas)
+                                    .min()
+                                    .orElse(0);
+
+                            System.out.println("Autor/es con el libro más corto (" + minPaginas + " páginas):");
                             for (Autores a : autoresMinLibro) {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
+
                         break;
                     default:
                         System.out.println("Opción no valida.");
@@ -211,7 +208,6 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
-
                         break;
                     case 2:
                         List<Autores> jovenes = UtilidadesAutores.autoresMasJovenes(autores);
@@ -224,7 +220,6 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
-
                         break;
                     case 3:
                         double media = UtilidadesAutores.edadMediaAutores(autores);
