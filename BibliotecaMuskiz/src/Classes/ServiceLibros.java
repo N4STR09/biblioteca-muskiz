@@ -80,7 +80,6 @@ public class ServiceLibros {
 
             System.out.print("Introduce el ID del libro a eliminar: ");
             int idLibroEliminar = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
 
             boolean eliminado = false;
 
@@ -144,7 +143,6 @@ public class ServiceLibros {
         System.out.println("3. Otras Estadisticas");
         System.out.println("4. Salir");
         int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
-        sc.nextLine(); // limpiar buffer
         int stat;
 
         switch (tipo) {
@@ -154,7 +152,6 @@ public class ServiceLibros {
                 System.out.println("3. Minimo de Paginas");
                 System.out.println("4. Salir");
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
-                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -180,7 +177,6 @@ public class ServiceLibros {
                 System.out.println("3. Minimo de Existencias");
                 System.out.println("4. Salir");
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
-                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -206,7 +202,6 @@ public class ServiceLibros {
                 System.out.println("3. Numero total de libros");
                 System.out.println("4. Salir");
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
-                sc.nextLine(); // limpiar buffer
                 
                 switch (stat) {
                     case 1:

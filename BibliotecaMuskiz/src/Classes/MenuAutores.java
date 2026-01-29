@@ -12,7 +12,6 @@ public class MenuAutores {
         System.out.println("4. Estadísticas de autores");
         System.out.println("5. Salir");
         int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
-        sc.nextLine(); // limpiar buffer
         
         switch (accion) {
             case 1:

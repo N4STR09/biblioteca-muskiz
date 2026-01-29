@@ -131,7 +131,6 @@ public class ServiceAutores {
         System.out.println("4. Total de autores");
         System.out.println("5. Salir");
         int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
-        sc.nextLine(); // limpiar buffer
         int stat;
 
         switch (tipo) {
@@ -140,7 +139,6 @@ public class ServiceAutores {
                 System.out.println("2. Autor con menos libros en la biblioteca");
                 System.out.println("3. Salir");
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
-                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -185,7 +183,6 @@ public class ServiceAutores {
                 System.out.println("2. Libro más corto");
                 System.out.println("3. Salir");
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
-                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -236,7 +233,6 @@ public class ServiceAutores {
                 System.out.println("3. Edad media de los autores");
                 System.out.println("4. Salir");
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
-                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
