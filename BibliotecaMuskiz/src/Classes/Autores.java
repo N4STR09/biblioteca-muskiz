@@ -2,17 +2,17 @@ package Classes;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Autores {
+
     private int idAutor;
     private String nombre;
     private String nacionalidad;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
     private boolean defuncion;
-    private String fechaFallecimiento;
+    private LocalDate fechaFallecimiento;
     private int edad;
     private String biografia;
     private String foto;
@@ -21,10 +21,19 @@ public class Autores {
     private String obrasDestacadas;
     private List<Integer> librosEscritos;
 
-    public Autores(int idAutor, String nombre, String nacionalidad, String fechaNacimiento,
-                boolean defuncion, String fechaFallecimiento, String biografia, String foto,
-                String generoLiterario, String premios, String obrasDestacadas) {
-                    
+    public Autores(
+            int idAutor,
+            String nombre,
+            String nacionalidad,
+            LocalDate fechaNacimiento,
+            boolean defuncion,
+            LocalDate fechaFallecimiento,
+            String biografia,
+            String foto,
+            String generoLiterario,
+            String premios,
+            String obrasDestacadas
+    ) {
         this.idAutor = idAutor;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
@@ -37,19 +46,17 @@ public class Autores {
         this.premios = premios;
         this.obrasDestacadas = obrasDestacadas;
 
-        this.librosEscritos = new ArrayList<>(); // inicializamos la lista vacía
+        this.librosEscritos = new ArrayList<>();
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate nacimiento = LocalDate.parse(fechaNacimiento, formatter);
-        LocalDate referencia;
+        calcularEdad();
+    }
 
-        if (defuncion && !fechaFallecimiento.isEmpty()) {
-            referencia = LocalDate.parse(fechaFallecimiento, formatter);
-        } else {
-            referencia = LocalDate.now();
-        }
+    private void calcularEdad() {
+        LocalDate referencia = defuncion && fechaFallecimiento != null
+                ? fechaFallecimiento
+                : LocalDate.now();
 
-        this.edad = Period.between(nacimiento, referencia).getYears();
+        this.edad = Period.between(fechaNacimiento, referencia).getYears();
     }
 
     //getter para librosEscritos
@@ -92,11 +99,11 @@ public class Autores {
         this.nacionalidad = nacionalidad;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -108,11 +115,11 @@ public class Autores {
         this.defuncion = defuncion;
     }
 
-    public String getFechaFallecimiento() {
+    public LocalDate getFechaFallecimiento() {
         return fechaFallecimiento;
     }
 
-    public void setFechaFallecimiento(String fechaFallecimiento) {
+    public void setFechaFallecimiento(LocalDate fechaFallecimiento) {
         this.fechaFallecimiento = fechaFallecimiento;
     }
 

@@ -2,6 +2,7 @@ package Classes;
 
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class ServiceAutores {
     public static void añadirAutor(Scanner sc, List<Autores> autores, List<Libros> libros) {
@@ -11,8 +12,7 @@ public class ServiceAutores {
 
         String nacionalidad = InputUtils.leerString(sc, "Nacionalidad: ");
 
-        System.out.print("Fecha de nacimiento (AAAA-MM-DD): ");
-        String fechaNacimiento = sc.nextLine();
+        LocalDate fechaNacimiento = InputUtils.leerFecha(sc, "Fecha de nacimiento: ");
 
         //vamos a crear un autor que este vivo
         boolean defuncion = false;
@@ -26,14 +26,22 @@ public class ServiceAutores {
 
         int id = autores.size() + 1; //asignacion de ID automatica
 
+        // 2. CONVERSIÓN AQUÍ (este bloque)
+        LocalDate fechaNacimientoLD = fechaNacimiento;
+
+        LocalDate fechaFallecimientoLD = null;
+        if (defuncion && !fechaFallecimiento.isBlank()) {
+            fechaFallecimientoLD = LocalDate.parse(fechaFallecimiento);
+        }
+
         //creamos un nuevo autor
         Autores nuevoAutor = new Autores(
             id,
             nombre,
             nacionalidad,
-            fechaNacimiento,
+            fechaNacimientoLD,
             defuncion,
-            fechaFallecimiento,
+            fechaFallecimientoLD,
             biografia,
             foto,
             generoLiterario,

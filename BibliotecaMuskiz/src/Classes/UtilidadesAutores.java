@@ -183,9 +183,9 @@ public class UtilidadesAutores {
         int yearActual = 2026;
 
         for (Autores a : autores) {
-            int nacimiento = Integer.parseInt(a.getFechaNacimiento().substring(0,4));
+            int nacimiento = a.getFechaNacimiento().getYear();
             int fin = a.getDefuncion() 
-                    ? Integer.parseInt(a.getFechaFallecimiento().substring(0,4)) 
+                    ? a.getFechaFallecimiento().getYear() 
                     : yearActual;
             total += fin - nacimiento;
         }

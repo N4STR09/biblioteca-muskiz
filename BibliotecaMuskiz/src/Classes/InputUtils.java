@@ -1,6 +1,9 @@
 package Classes;
 
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class InputUtils {
 
@@ -45,4 +48,18 @@ public class InputUtils {
         }
     }
 
+    public static LocalDate leerFecha(Scanner sc, String mensaje) {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        while (true) {
+            System.out.print(mensaje + " (AAAA-MM-DD): ");
+            String entrada = sc.nextLine().trim();
+
+            try {
+                return LocalDate.parse(entrada, formato);
+            } catch (DateTimeParseException e) {
+                System.out.println("Fecha inválida. Formato correcto: AAAA-MM-DD");
+            }
+        }
+    }
 }

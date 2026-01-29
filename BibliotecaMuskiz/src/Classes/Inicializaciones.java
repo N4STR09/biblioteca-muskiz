@@ -1,28 +1,29 @@
 package Classes;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Inicializaciones {
     public static void inicializar(List<Autores> autores, List<Libros> libros) {
 
-        Autores autor1 = new Autores(1, "Cervantes", "Española", "1547-09-29", true,
-                "1616-04-22", "Escritor del Siglo de Oro", "cervantes.jpg",
+        Autores autor1 = new Autores(1, "Cervantes", "Española", LocalDate.of(1547, 9, 29), true,
+                LocalDate.of(1616, 4, 22), "Escritor del Siglo de Oro", "cervantes.jpg",
                 "Novela", "Ninguno", "Don Quijote");
 
-        Autores autor2 = new Autores(2, "Gabriel García Márquez", "Colombiana", "1927-03-06", true,
-                "2014-04-17", "Autor del realismo mágico", "gabo.jpg",
+        Autores autor2 = new Autores(2, "Gabriel García Márquez", "Colombiana", LocalDate.of(1927, 3, 6), true,
+                LocalDate.of(2014, 4, 17), "Autor del realismo mágico", "gabo.jpg",
                 "Novela", "Nobel", "Cien años de soledad");
 
-        Autores autor3 = new Autores(3, "J.K. Rowling", "Británica", "1965-07-31", false,
-                "", "Autora de Harry Potter", "rowling.jpg",
+        Autores autor3 = new Autores(3, "J.K. Rowling", "Británica", LocalDate.of(1965, 7, 31), false,
+                null, "Autora de Harry Potter", "rowling.jpg",
                 "Fantasía", "Ninguno", "Harry Potter");
 
-        Autores autor4 = new Autores(4, "Isabel Allende", "Chilena", "1942-08-02", false,
-                "", "Autora de La casa de los espíritus", "allende.jpg",
+        Autores autor4 = new Autores(4, "Isabel Allende", "Chilena", LocalDate.of(1942, 8, 2), false,
+                null, "Autora de La casa de los espíritus", "allende.jpg",
                 "Novela", "Ninguno", "La casa de los espíritus");
 
-        Autores autor5 = new Autores(5, "Mario Vargas Llosa", "Peruana", "1936-03-28", false,
-                "", "Escritor y político", "vargas.jpg",
+        Autores autor5 = new Autores(5, "Mario Vargas Llosa", "Peruana", LocalDate.of(1936, 3, 28), false,
+                null, "Escritor y político", "vargas.jpg",
                 "Novela", "Nobel", "La ciudad y los perros");
 
         autores.add(autor1);
