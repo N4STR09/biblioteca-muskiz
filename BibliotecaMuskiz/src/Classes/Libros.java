@@ -162,6 +162,10 @@ public class Libros {
         this.disponibilidad = disponibilidad;
     }
 
+    public String getNombreAutor() {
+        return autor.getNombre();
+    }
+
     @Override
     public String toString() {
         return super.toString();

@@ -106,6 +106,37 @@ public class ServiceLibros {
         for (Libros a : libros) {
             System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
         }
+
+        int id = InputUtils.leerInt(sc, "Introduce el ID del libro para ver más detalles (0 para salir): ");
+
+        if (id != 0) {
+            Libros libroSeleccionado = null;
+            for (Libros a : libros) {
+                if (a.getIdLibro() == id) {
+                    libroSeleccionado = a;
+                    break;
+                }
+            }
+
+            if (libroSeleccionado != null) {
+                System.out.println("---- DETALLES DEL LIBRO ----");
+                System.out.println("Título: " + libroSeleccionado.getTitulo());
+                System.out.println("Autor: " + libroSeleccionado.getNombreAutor());
+                System.out.println("Género: " + libroSeleccionado.getGenero());
+                System.out.println("Número de páginas: " + libroSeleccionado.getNumeroPaginas());
+                System.out.println("Año de publicación: " + libroSeleccionado.getAnioPublicacion());
+                System.out.println("Editorial: " + libroSeleccionado.getEditorial());
+                System.out.println("ISBN: " + libroSeleccionado.getIsbn());
+                System.out.println("Idioma: " + libroSeleccionado.getIdioma());
+                System.out.println("Formato: " + libroSeleccionado.getFormato());
+                System.out.println("Existencias: " + libroSeleccionado.getExistencias());
+                System.out.println("Disponibilidad: " + (libroSeleccionado.isDisponibilidad() ? "Disponible" : "No disponible"));
+                System.out.println("Descripción: " + libroSeleccionado.getDescripcion());
+                System.out.println("Categoría: " + libroSeleccionado.getCategoria());
+            } else {
+                System.out.println("No se encontró ningún libro con ese ID.");
+            }
+        }
     }
 
     public static void estadisticasLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {

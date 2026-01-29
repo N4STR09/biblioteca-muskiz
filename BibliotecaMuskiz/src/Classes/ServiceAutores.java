@@ -93,6 +93,7 @@ public class ServiceAutores {
             for (Autores a : autores) {
                 if (a.getIdAutor() == id) {
                     System.out.println("---- DETALLES DEL AUTOR ----");
+                    System.out.println("ID: " + a.getIdAutor());
                     System.out.println("Nombre: " + a.getNombre());
                     System.out.println("Nacionalidad: " + a.getNacionalidad());
                     System.out.println("Fecha de Nacimiento: " + a.getFechaNacimiento());
