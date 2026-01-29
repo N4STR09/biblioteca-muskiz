@@ -1,6 +1,12 @@
-package Classes;
+package Classes.service;
 
 import java.util.Scanner;
+
+import Classes.model.Autores;
+import Classes.model.Libros;
+import Classes.utils.InputUtils;
+import Classes.utils.UtilidadesLibros;
+
 import java.util.List;
 
 public class ServiceLibros {

@@ -1,7 +1,10 @@
-package Classes;
+package Classes.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Classes.model.Autores;
+import Classes.model.Libros;
 
 public class UtilidadesAutores {
 
