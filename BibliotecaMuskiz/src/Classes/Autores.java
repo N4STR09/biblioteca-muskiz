@@ -115,6 +115,10 @@ public class Autores {
         this.defuncion = defuncion;
     }
 
+    public boolean isDefuncion() {
+        return defuncion;
+    }
+
     public LocalDate getFechaFallecimiento() {
         return fechaFallecimiento;
     }

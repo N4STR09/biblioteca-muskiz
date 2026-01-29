@@ -30,18 +30,17 @@ public class ServiceLibros {
         } else {
 
             String genero = InputUtils.leerString(sc, "Género del libro: ");
-
-            int existencias = 1;
-            int numeroPaginas = 1;
-            String anioPublicacion = "";
-            String editorial = "";
-            String isbn = "";
-            String idioma = "";
-            String formato = "";
-            String portada = ""; 
-            String descripcion = "";
-            String categoria = ""; 
-            boolean disponibilidad = true;
+            int existencias = InputUtils.leerInt(sc, "Número de existencias: ");
+            int numeroPaginas = InputUtils.leerInt(sc, "Número de páginas: ");
+            int anioPublicacion = InputUtils.leerInt(sc, "Año de publicación: ");
+            String editorial = InputUtils.leerString(sc, "Editorial: ");
+            String isbn = InputUtils.leerString(sc, "ISBN: ");
+            String idioma = InputUtils.leerString(sc, "Idioma: ");
+            String formato = InputUtils.leerString(sc, "Formato: ");
+            String portada = InputUtils.leerString(sc, "Portada del libro: ");
+            String descripcion = InputUtils.leerString(sc, "Descripción del libro: ");
+            String categoria = InputUtils.leerString(sc, "Categoría del libro: ");
+            boolean disponibilidad = InputUtils.leerBoolean(sc, "¿Está disponible?");
 
             int id = libros.size() + 1; 
             

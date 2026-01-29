@@ -1,4 +1,5 @@
 package Classes;
+
 public class Libros {
     private int idLibro;
     private int existencias;
@@ -6,7 +7,7 @@ public class Libros {
     private String titulo;
     private Autores autor; //objeto Autor
     private String genero;
-    private String anioPublicacion;
+    private int anioPublicacion;
     private String editorial;
     private String isbn;
     private String idioma;
@@ -17,7 +18,7 @@ public class Libros {
     private boolean disponibilidad;
 
     public Libros(int idLibro, int existencias, int numeroPaginas, String titulo,
-                    Autores autor, String genero, String anioPublicacion, String editorial,
+                    Autores autor, String genero, int anioPublicacion, String editorial,
                     String isbn, String idioma, String formato, String portada,
                     String descripcion, String categoria, boolean disponibilidad) {
         this.idLibro = idLibro;
@@ -89,11 +90,11 @@ public class Libros {
         this.genero = genero;
     }
 
-    public String getAnioPublicacion() {
+    public int getAnioPublicacion() {
         return anioPublicacion;
     }
 
-    public void setAnioPublicacion(String anioPublicacion) {
+    public void setAnioPublicacion(int anioPublicacion) {
         this.anioPublicacion = anioPublicacion;
     }
 

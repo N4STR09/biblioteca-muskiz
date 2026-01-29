@@ -15,33 +15,29 @@ public class ServiceAutores {
         LocalDate fechaNacimiento = InputUtils.leerFecha(sc, "Fecha de nacimiento: ");
 
         //vamos a crear un autor que este vivo
-        boolean defuncion = false;
-        String fechaFallecimiento = "";
-        //omitimos esta informacion de momento
-        String biografia = "";
-        String foto = "";
-        String generoLiterario = "";
-        String premios = "";
-        String obrasDestacadas = "";
+        boolean defuncion = InputUtils.leerBoolean(sc, "¿El autor ha fallecido?: ");
+        
+        LocalDate fechaFallecimiento = null;
+        if (defuncion) {
+            fechaFallecimiento = InputUtils.leerFecha(sc, "Fecha de fallecimiento: ");
+        }
+        
+        String biografia = InputUtils.leerString(sc, "Biografía: ");
+        String foto = InputUtils.leerString(sc, "Foto del autor: ");
+        String generoLiterario = InputUtils.leerString(sc, "Género literario: ");
+        String premios = InputUtils.leerString(sc, "Premios obtenidos: ");
+        String obrasDestacadas = InputUtils.leerString(sc, "Obras destacadas: ");
 
         int id = autores.size() + 1; //asignacion de ID automatica
-
-        // 2. CONVERSIÓN AQUÍ (este bloque)
-        LocalDate fechaNacimientoLD = fechaNacimiento;
-
-        LocalDate fechaFallecimientoLD = null;
-        if (defuncion && !fechaFallecimiento.isBlank()) {
-            fechaFallecimientoLD = LocalDate.parse(fechaFallecimiento);
-        }
 
         //creamos un nuevo autor
         Autores nuevoAutor = new Autores(
             id,
             nombre,
             nacionalidad,
-            fechaNacimientoLD,
+            fechaNacimiento,
             defuncion,
-            fechaFallecimientoLD,
+            fechaFallecimiento,
             biografia,
             foto,
             generoLiterario,
@@ -88,6 +84,35 @@ public class ServiceAutores {
 
         for (Autores a : autores) {
             System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
+        }
+        int id = InputUtils.leerInt(sc, "Introduce el ID del autor para ver detalles (0 para salir): ");
+
+        if (id != 0) {
+            boolean encontrado = false;
+
+            for (Autores a : autores) {
+                if (a.getIdAutor() == id) {
+                    System.out.println("---- DETALLES DEL AUTOR ----");
+                    System.out.println("Nombre: " + a.getNombre());
+                    System.out.println("Nacionalidad: " + a.getNacionalidad());
+                    System.out.println("Fecha de Nacimiento: " + a.getFechaNacimiento());
+                    System.out.println("Defunción: " + (a.isDefuncion() ? "Sí" : "No"));
+                    if (a.isDefuncion()) {
+                        System.out.println("Fecha de Fallecimiento: " + a.getFechaFallecimiento());
+                    }
+                    System.out.println("Biografía: " + a.getBiografia());
+                    System.out.println("Foto: " + a.getFoto());
+                    System.out.println("Género Literario: " + a.getGeneroLiterario());
+                    System.out.println("Premios: " + a.getPremios());
+                    System.out.println("Obras Destacadas: " + a.getObrasDestacadas());
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("No se encontró ningún autor con ese ID.");
+            }
         }
     }
 
