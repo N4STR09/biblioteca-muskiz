@@ -20,7 +20,12 @@ public class ServiceAutores {
         
         LocalDate fechaFallecimiento = null;
         if (defuncion) {
-            fechaFallecimiento = InputUtils.leerFecha(sc, "Fecha de fallecimiento: ");
+            do {
+                fechaFallecimiento = InputUtils.leerFecha(sc, "Fecha de fallecimiento: ");
+                if (fechaFallecimiento.isBefore(fechaNacimiento)) {
+                    System.out.println("La fecha de fallecimiento no puede ser anterior a la fecha de nacimiento.");
+                }
+            } while (fechaFallecimiento.isBefore(fechaNacimiento));
         }
         
         String biografia = InputUtils.leerString(sc, "Biografía: ");
@@ -125,7 +130,8 @@ public class ServiceAutores {
         System.out.println("3. Edades de autores");
         System.out.println("4. Total de autores");
         System.out.println("5. Salir");
-        int tipo = sc.nextInt();
+        int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
+        sc.nextLine(); // limpiar buffer
         int stat;
 
         switch (tipo) {
@@ -133,7 +139,8 @@ public class ServiceAutores {
                 System.out.println("1. Autor con más libros en la biblioteca");
                 System.out.println("2. Autor con menos libros en la biblioteca");
                 System.out.println("3. Salir");
-                stat = sc.nextInt();
+                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
+                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -177,7 +184,8 @@ public class ServiceAutores {
                 System.out.println("1. Libro más largo");
                 System.out.println("2. Libro más corto");
                 System.out.println("3. Salir");
-                stat = sc.nextInt();
+                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
+                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -227,7 +235,8 @@ public class ServiceAutores {
                 System.out.println("2. Autor más joven");
                 System.out.println("3. Edad media de los autores");
                 System.out.println("4. Salir");
-                stat = sc.nextInt();
+                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
+                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:

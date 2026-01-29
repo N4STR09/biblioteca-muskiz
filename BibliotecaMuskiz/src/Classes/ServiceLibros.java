@@ -143,7 +143,8 @@ public class ServiceLibros {
         System.out.println("2. Estadisticas existencias");
         System.out.println("3. Otras Estadisticas");
         System.out.println("4. Salir");
-        int tipo = sc.nextInt();
+        int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
+        sc.nextLine(); // limpiar buffer
         int stat;
 
         switch (tipo) {
@@ -152,7 +153,8 @@ public class ServiceLibros {
                 System.out.println("2. Maximo de Paginas");
                 System.out.println("3. Minimo de Paginas");
                 System.out.println("4. Salir");
-                stat = sc.nextInt();
+                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
+                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -177,7 +179,8 @@ public class ServiceLibros {
                 System.out.println("2. Maximo de Existencias");
                 System.out.println("3. Minimo de Existencias");
                 System.out.println("4. Salir");
-                stat = sc.nextInt();
+                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
+                sc.nextLine(); // limpiar buffer
 
                 switch (stat) {
                     case 1:
@@ -202,8 +205,9 @@ public class ServiceLibros {
                 System.out.println("2. Cantidad de libros por género");
                 System.out.println("3. Numero total de libros");
                 System.out.println("4. Salir");
-                stat = sc.nextInt();
-
+                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
+                sc.nextLine(); // limpiar buffer
+                
                 switch (stat) {
                     case 1:
                         double porcentaje = UtilidadesLibros.porcentajeDisponibles(libros);
