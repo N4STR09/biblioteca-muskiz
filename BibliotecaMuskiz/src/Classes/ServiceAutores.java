@@ -125,9 +125,9 @@ public class ServiceAutores {
                         if (minAutores.isEmpty()) {
                             System.out.println("No hay autores en la biblioteca.");
                         } else {
-                            int maxLibros = minAutores.get(0).getNumeroLibros();
+                            int minLibros = minAutores.get(0).getNumeroLibros();
 
-                            System.out.println("Autor/es con menos libros (" + maxLibros + " libros)");
+                            System.out.println("Autor/es con menos libros (" + minLibros + " libros)");
 
                             for (Autores a : minAutores) {
                                 System.out.println("- " + a.getNombre());

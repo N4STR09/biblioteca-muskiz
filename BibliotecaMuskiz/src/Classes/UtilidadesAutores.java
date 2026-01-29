@@ -35,7 +35,7 @@ public class UtilidadesAutores {
         List<Autores> resultado = new ArrayList<>();
         if (autores == null || autores.isEmpty()) return resultado;
 
-        int minLibros = 0;
+        int minLibros = 100000;
 
         for (Autores a : autores) {
             int numLibros = a.getLibrosEscritos().size();
