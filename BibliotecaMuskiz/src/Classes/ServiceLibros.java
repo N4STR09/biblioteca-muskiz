@@ -28,50 +28,50 @@ public class ServiceLibros {
         
         if (autorElegido == null) {
             System.out.println("Autor no encontrado. Libro no creado.");
-            //continue; //funciona como un return pero que no cierra el menú
+        } else {
+
+            System.out.print("Género del libro: ");
+            String genero = sc.nextLine();
+
+            int existencias = 1;
+            int numeroPaginas = 1;
+            String anioPublicacion = "";
+            String editorial = "";
+            String isbn = "";
+            String idioma = "";
+            String formato = "";
+            String portada = ""; 
+            String descripcion = "";
+            String categoria = ""; 
+            boolean disponibilidad = true;
+
+            int id = libros.size() + 1; 
+            
+            //creamos un nuevo libro
+            Libros nuevoLibro = new Libros(
+                id,
+                existencias,
+                numeroPaginas,
+                titulo,
+                autorElegido,
+                genero,
+                anioPublicacion,
+                editorial,
+                isbn,
+                idioma,
+                formato,
+                portada,
+                descripcion,
+                categoria,
+                disponibilidad
+            );
+
+            libros.add(nuevoLibro);
+
+            autorElegido.addLibro(nuevoLibro.getIdLibro());
+
+            System.out.println("Libro añadido correctamente.");
         }
-
-        System.out.print("Género del libro: ");
-        String genero = sc.nextLine();
-
-        int existencias = 1;
-        int numeroPaginas = 1;
-        String anioPublicacion = "";
-        String editorial = "";
-        String isbn = "";
-        String idioma = "";
-        String formato = "";
-        String portada = ""; 
-        String descripcion = "";
-        String categoria = ""; 
-        boolean disponibilidad = true;
-
-        int id = libros.size() + 1; 
-        
-        //creamos un nuevo libro
-        Libros nuevoLibro = new Libros(
-            id,
-            existencias,
-            numeroPaginas,
-            titulo,
-            autorElegido,
-            genero,
-            anioPublicacion,
-            editorial,
-            isbn,
-            idioma,
-            formato,
-            portada,
-            descripcion,
-            categoria,
-            disponibilidad
-        );
-
-        libros.add(nuevoLibro);
-
-        autorElegido.addLibro(nuevoLibro.getIdLibro());
-
-        System.out.println("Libro añadido correctamente.");
     }
 
     public static void eliminarLibro(Scanner sc, List<Autores> autores, List<Libros> libros) {
