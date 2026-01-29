@@ -25,8 +25,7 @@ public class InputUtils {
             System.out.print(mensaje);
             try {
                 int num = Integer.parseInt(sc.nextLine());
-                if (num > 0) return num;
-                System.out.println("Debe ser mayor que 0.");
+                if (num >= 0) return num;
             } catch (NumberFormatException e) {
                 System.out.println("Introduce un número válido.");
             }
