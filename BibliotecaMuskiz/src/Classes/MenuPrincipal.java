@@ -5,15 +5,13 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
     public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        
         int opcion;
-
+        
         do {
             System.out.println("1. Autores");
             System.out.println("2. Libros");
             System.out.println("3. Salir");
-            opcion = sc.nextInt();
-            sc.nextLine(); //limpiar buffer de entrada
+            opcion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
 
             switch (opcion) {
                 case 1:

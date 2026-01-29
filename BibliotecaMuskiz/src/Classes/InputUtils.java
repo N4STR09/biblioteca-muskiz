@@ -7,15 +7,16 @@ import java.time.format.DateTimeParseException;
 
 public class InputUtils {
 
+    //comprobar que no es un numero o string vacio
     public static String leerString(Scanner sc, String mensaje) {
         String texto;
         do {
             System.out.print(mensaje);
             texto = sc.nextLine().trim();
-            if (texto.isEmpty()) {
-                System.out.println("El campo no puede estar vacío.");
+            if (texto.isEmpty() || texto.matches("\\d+")) {
+                System.out.println("El campo no puede estar vacío o contener números.");
             }
-        } while (texto.isEmpty());
+        } while (texto.isEmpty() || texto.matches("\\d+"));
         return texto;
     }
 
@@ -59,6 +60,23 @@ public class InputUtils {
                 return LocalDate.parse(entrada, formato);
             } catch (DateTimeParseException e) {
                 System.out.println("Fecha inválida. Formato correcto: AAAA-MM-DD");
+            }
+        }
+    }
+
+    public static int leerNumeroMenu(Scanner sc, String mensaje, int opcionMaxima) {
+        while (true) {
+            if (mensaje != null) {
+                System.out.print(mensaje);
+            }
+            try {
+                int num = Integer.parseInt(sc.nextLine());
+                if (num >= 1 && num <= opcionMaxima) {
+                    return num;
+                }
+                System.out.println("Selecciona una opción válida entre 1 y " + opcionMaxima + ".");
+            } catch (NumberFormatException e) {
+                System.out.println("Introduce un número válido.");
             }
         }
     }

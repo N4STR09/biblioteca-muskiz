@@ -5,15 +5,14 @@ import java.util.Scanner;
 
 public class MenuAutores {
     public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        int accion;
+        
         System.out.println("1. Añadir autor");
         System.out.println("2. Eliminar autor");
         System.out.println("3. Visualizar autores");
         System.out.println("4. Estadísticas de autores");
         System.out.println("5. Salir");
-        accion = sc.nextInt();
-        sc.nextLine();
-                        
+        int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
+        
         switch (accion) {
             case 1:
                 ServiceAutores.añadirAutor(sc, autores, libros);

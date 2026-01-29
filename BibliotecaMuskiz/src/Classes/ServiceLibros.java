@@ -13,9 +13,7 @@ public class ServiceLibros {
             System.out.println(a.getIdAutor() + " - " + a.getNombre());
         }
 
-        System.out.print("ID del autor: ");
-        int idAutor = sc.nextInt();
-        sc.nextLine(); // limpiar buffer
+        int idAutor = InputUtils.leerInt(sc, "ID del autor: ");
 
         Autores autorElegido = null;
         for (Autores a : autores) {
