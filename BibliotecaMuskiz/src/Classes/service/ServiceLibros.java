@@ -179,8 +179,18 @@ public class ServiceLibros {
                         }
                         break;
                     case 3:
-                        Libros min = UtilidadesLibros.minPaginas(libros);
-                        System.out.println("El libro con menos paginas es " + min.getTitulo() + " con " + min.getNumeroPaginas() + " páginas.");
+                        List<Libros> librosMin = UtilidadesLibros.librosMinimoPaginas(libros);
+
+                        if (librosMin.isEmpty()) {
+                            System.out.println("No hay libros en la biblioteca.");
+                        } else {
+                            int paginas = librosMin.get(0).getNumeroPaginas();
+                            System.out.println("Libro/s con más páginas (" + paginas + " páginas):");
+
+                            for (Libros l : librosMin) {
+                                System.out.println("- " + l.getTitulo() + " (" + l.getAutorObj().getNombre() + ")");
+                            }
+                        }
                         break;
                     default:
                         System.out.println("Opción no valida.");
@@ -214,8 +224,18 @@ public class ServiceLibros {
                         }
                         break;
                     case 3:
-                        Libros min = UtilidadesLibros.minExistencias(libros);
-                        System.out.println("El libro con menos existencias es " + min.getTitulo() + " con " + min.getExistencias() + " existencias.");
+                        List<Libros> librosMin = UtilidadesLibros.librosMinExistencias(libros);
+
+                        if (librosMin.isEmpty()) {
+                            System.out.println("No hay libros en la biblioteca.");
+                        } else {
+                            int existencias = librosMin.get(0).getExistencias();
+                            System.out.println("Libro/s con más existencias (" + existencias + " unidades):");
+
+                            for (Libros l : librosMin) {
+                                System.out.println("- " + l.getTitulo());
+                            }
+                        }
                         break;
                     default:
                         System.out.println("Opción no valida.");

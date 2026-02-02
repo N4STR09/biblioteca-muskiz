@@ -46,15 +46,24 @@ public class UtilidadesLibros {
     }
 
     //calculo minimo de paginas
-    public static Libros minPaginas(List<Libros> libros) {
-        if (libros == null || libros.isEmpty()) return null;
+    public static List<Libros> librosMinimoPaginas(List<Libros> libros) {
+        List<Libros> min = new ArrayList<>();
+        if (libros == null || libros.isEmpty()) return min;
 
-        Libros min = libros.get(0);
-        for (Libros libro : libros) {
-            if (libro.getNumeroPaginas() < min.getNumeroPaginas()) {
-                min = libro;
+        int minPaginas = 0;
+
+        for (Libros l : libros) {
+            if (l.getNumeroPaginas() > minPaginas) {
+                minPaginas = l.getNumeroPaginas();
             }
         }
+
+        for (Libros l : libros) {
+            if (l.getNumeroPaginas() == minPaginas) {
+                min.add(l);
+            }
+        }
+
         return min;
     }
 
@@ -74,8 +83,8 @@ public class UtilidadesLibros {
 
     //calculo maximo de existencias
     public static List<Libros> librosMaxExistencias(List<Libros> libros) {
-        List<Libros> resultado = new ArrayList<>();
-        if (libros == null || libros.isEmpty()) return resultado;
+        List<Libros> max = new ArrayList<>();
+        if (libros == null || libros.isEmpty()) return max;
 
         int maxExistencias = 0;
 
@@ -87,24 +96,33 @@ public class UtilidadesLibros {
 
         for (Libros l : libros) {
             if (l.getExistencias() == maxExistencias) {
-                resultado.add(l);
+                max.add(l);
             }
         }
 
-        return resultado;
+        return max;
     }
 
 
     //calculo minimo de existencias
-    public static Libros minExistencias(List<Libros> libros) {
-        if (libros == null || libros.isEmpty()) return null;
+    public static List<Libros> librosMinExistencias(List<Libros> libros) {
+        List<Libros> min = new ArrayList<>();
+        if (libros == null || libros.isEmpty()) return min;
 
-        Libros min = libros.get(0);
-        for (Libros libro : libros) {
-            if (libro.getExistencias() < min.getExistencias()) {
-                min = libro;
+        int minExistencias = 0;
+
+        for (Libros l : libros) {
+            if (l.getExistencias() > minExistencias) {
+                minExistencias = l.getExistencias();
             }
         }
+
+        for (Libros l : libros) {
+            if (l.getExistencias() == minExistencias) {
+                min.add(l);
+            }
+        }
+
         return min;
     }
 
