@@ -200,8 +200,18 @@ public class ServiceLibros {
                         System.out.println("Media de existencias: " + media);
                         break;
                     case 2:
-                        Libros max = UtilidadesLibros.maxExistencias(libros);
-                        System.out.println("El libro con mas existencias es " + max.getTitulo() + " con " + max.getExistencias() + " existencias.");
+                        List<Libros> librosMax = UtilidadesLibros.librosMaxExistencias(libros);
+
+                        if (librosMax.isEmpty()) {
+                            System.out.println("No hay libros en la biblioteca.");
+                        } else {
+                            int existencias = librosMax.get(0).getExistencias();
+                            System.out.println("Libro/s con más existencias (" + existencias + " unidades):");
+
+                            for (Libros l : librosMax) {
+                                System.out.println("- " + l.getTitulo());
+                            }
+                        }
                         break;
                     case 3:
                         Libros min = UtilidadesLibros.minExistencias(libros);

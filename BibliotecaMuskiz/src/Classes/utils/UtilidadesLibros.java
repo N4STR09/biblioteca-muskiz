@@ -73,17 +73,27 @@ public class UtilidadesLibros {
     }
 
     //calculo maximo de existencias
-    public static Libros maxExistencias(List<Libros> libros) {
-        if (libros == null || libros.isEmpty()) return null;
+    public static List<Libros> librosMaxExistencias(List<Libros> libros) {
+        List<Libros> resultado = new ArrayList<>();
+        if (libros == null || libros.isEmpty()) return resultado;
 
-        Libros max = libros.get(0);
-        for (Libros libro : libros) {
-            if (libro.getExistencias() > max.getExistencias()) {
-                max = libro;
+        int maxExistencias = 0;
+
+        for (Libros l : libros) {
+            if (l.getExistencias() > maxExistencias) {
+                maxExistencias = l.getExistencias();
             }
         }
-        return max;
+
+        for (Libros l : libros) {
+            if (l.getExistencias() == maxExistencias) {
+                resultado.add(l);
+            }
+        }
+
+        return resultado;
     }
+
 
     //calculo minimo de existencias
     public static Libros minExistencias(List<Libros> libros) {
