@@ -1,5 +1,6 @@
 package Classes.utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,15 +24,24 @@ public class UtilidadesLibros {
     }
 
     //calculo maximo de paginas
-    public static Libros maxPaginas(List<Libros> libros) {
-        if (libros == null || libros.isEmpty()) return null;
+    public static List<Libros> librosMaxPaginas(List<Libros> libros) {
+        List<Libros> max = new ArrayList<>();
+        if (libros == null || libros.isEmpty()) return max;
 
-        Libros max = libros.get(0);
-        for (Libros libro : libros) {
-            if (libro.getNumeroPaginas() > max.getNumeroPaginas()) {
-                max = libro;
+        int maxPaginas = 0;
+
+        for (Libros l : libros) {
+            if (l.getNumeroPaginas() > maxPaginas) {
+                maxPaginas = l.getNumeroPaginas();
             }
         }
+
+        for (Libros l : libros) {
+            if (l.getNumeroPaginas() == maxPaginas) {
+                max.add(l);
+            }
+        }
+
         return max;
     }
 
