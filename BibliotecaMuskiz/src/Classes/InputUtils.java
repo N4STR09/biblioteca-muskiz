@@ -37,10 +37,10 @@ public class InputUtils {
             System.out.print(mensaje + " (s/n): ");
             String entrada = sc.nextLine().trim().toLowerCase();
 
-            if (entrada.equals("s") || entrada.equals("si")) {
+            if (entrada.equals("s") || entrada.equals("si") || entrada.equals("S") || entrada.equals("Si") || entrada.equals("SI")) {
                 return true;
             }
-            if (entrada.equals("n") || entrada.equals("no")) {
+            if (entrada.equals("n") || entrada.equals("no") || entrada.equals("N") || entrada.equals("No") || entrada.equals("NO")) {
                 return false;
             }
 
