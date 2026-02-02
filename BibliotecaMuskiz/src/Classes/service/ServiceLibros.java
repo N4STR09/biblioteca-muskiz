@@ -165,8 +165,18 @@ public class ServiceLibros {
                         System.out.println("Media de páginas: " + media);
                         break;
                     case 2:
-                        Libros max = UtilidadesLibros.maxPaginas(libros);
-                        System.out.println("El libro con mas paginas es " + max.getTitulo() + " con " + max.getNumeroPaginas() + " páginas.");
+                        List<Libros> librosMax = UtilidadesLibros.librosMaxPaginas(libros);
+
+                        if (librosMax.isEmpty()) {
+                            System.out.println("No hay libros en la biblioteca.");
+                        } else {
+                            int paginas = librosMax.get(0).getNumeroPaginas();
+                            System.out.println("Libro/s con más páginas (" + paginas + " páginas):");
+
+                            for (Libros l : librosMax) {
+                                System.out.println("- " + l.getTitulo() + " (" + l.getAutorObj().getNombre() + ")");
+                            }
+                        }
                         break;
                     case 3:
                         Libros min = UtilidadesLibros.minPaginas(libros);
