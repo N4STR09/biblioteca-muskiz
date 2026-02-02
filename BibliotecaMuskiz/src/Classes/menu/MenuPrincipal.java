@@ -1,12 +1,16 @@
-package Classes;
+package Classes.menu;
 
 import java.util.List;
 import java.util.Scanner;
 
+import Classes.model.Autores;
+import Classes.model.Libros;
+import Classes.utils.InputUtils;
+
 public class MenuPrincipal {
     public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
         int opcion;
-        
+
         do {
             System.out.println("1. Autores");
             System.out.println("2. Libros");
@@ -20,9 +24,6 @@ public class MenuPrincipal {
                 case 2:
                     MenuLibros.mostrar(sc, autores, libros);
                 default:
-                    if (opcion != 3) {
-                        System.out.println("Esa opción no es valida. Introduce una opción permitida.");
-                    }
                     break;
             }
         } while (opcion != 3);

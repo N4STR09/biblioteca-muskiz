@@ -1,7 +1,13 @@
-package Classes;
+package Classes.service;
 
 import java.util.List;
 import java.util.Scanner;
+
+import Classes.model.Autores;
+import Classes.model.Libros;
+import Classes.utils.InputUtils;
+import Classes.utils.UtilidadesAutores;
+
 import java.time.LocalDate;
 
 public class ServiceAutores {
