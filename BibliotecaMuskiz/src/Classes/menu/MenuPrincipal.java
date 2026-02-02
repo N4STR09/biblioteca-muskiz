@@ -2,9 +2,9 @@ package Classes.menu;
 
 import java.util.List;
 import java.util.Scanner;
-
 import Classes.model.Autores;
 import Classes.model.Libros;
+import Classes.repository.BibliotecaRepository;
 import Classes.utils.InputUtils;
 
 public class MenuPrincipal {
@@ -27,5 +27,9 @@ public class MenuPrincipal {
                     break;
             }
         } while (opcion != 3);
+        
+        BibliotecaRepository.guardarAutores(autores);
+        BibliotecaRepository.guardarLibros(libros);
+
     }
 }

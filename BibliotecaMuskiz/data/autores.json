@@ -1,0 +1,113 @@
+[
+  {
+    "idAutor": 1,
+    "nombre": "Cervantes",
+    "nacionalidad": "Española",
+    "fechaNacimiento": "1547-09-29",
+    "defuncion": true,
+    "fechaFallecimiento": "1616-04-22",
+    "edad": 68,
+    "biografia": "Escritor del Siglo de Oro",
+    "foto": "cervantes.jpg",
+    "generoLiterario": "Novela",
+    "premios": "Ninguno",
+    "obrasDestacadas": "Don Quijote",
+    "librosEscritos": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "idAutor": 2,
+    "nombre": "Gabriel García Márquez",
+    "nacionalidad": "Colombiana",
+    "fechaNacimiento": "1927-03-06",
+    "defuncion": true,
+    "fechaFallecimiento": "2014-04-17",
+    "edad": 87,
+    "biografia": "Autor del realismo mágico",
+    "foto": "gabo.jpg",
+    "generoLiterario": "Novela",
+    "premios": "Nobel",
+    "obrasDestacadas": "Cien años de soledad",
+    "librosEscritos": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "idAutor": 3,
+    "nombre": "J.K. Rowling",
+    "nacionalidad": "Británica",
+    "fechaNacimiento": "1965-07-31",
+    "defuncion": false,
+    "edad": 60,
+    "biografia": "Autora de Harry Potter",
+    "foto": "rowling.jpg",
+    "generoLiterario": "Fantasía",
+    "premios": "Ninguno",
+    "obrasDestacadas": "Harry Potter",
+    "librosEscritos": [
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "idAutor": 4,
+    "nombre": "Isabel Allende",
+    "nacionalidad": "Chilena",
+    "fechaNacimiento": "1942-08-02",
+    "defuncion": false,
+    "edad": 83,
+    "biografia": "Autora de La casa de los espíritus",
+    "foto": "allende.jpg",
+    "generoLiterario": "Novela",
+    "premios": "Ninguno",
+    "obrasDestacadas": "La casa de los espíritus",
+    "librosEscritos": [
+      13,
+      14,
+      15,
+      16
+    ]
+  },
+  {
+    "idAutor": 5,
+    "nombre": "Mario Vargas Llosa",
+    "nacionalidad": "Peruana",
+    "fechaNacimiento": "1936-03-28",
+    "defuncion": false,
+    "edad": 89,
+    "biografia": "Escritor y político",
+    "foto": "vargas.jpg",
+    "generoLiterario": "Novela",
+    "premios": "Nobel",
+    "obrasDestacadas": "La ciudad y los perros",
+    "librosEscritos": [
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  {
+    "idAutor": 6,
+    "nombre": "asidj",
+    "nacionalidad": "asodkp",
+    "fechaNacimiento": "2005-01-01",
+    "defuncion": false,
+    "edad": 21,
+    "biografia": "saijd",
+    "foto": "asidj",
+    "generoLiterario": "sapdj",
+    "premios": "sapdj",
+    "obrasDestacadas": "sapdj",
+    "librosEscritos": []
+  }
+]
