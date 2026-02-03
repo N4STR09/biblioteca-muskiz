@@ -20,7 +20,7 @@ public class BibliotecaRepository {
             .create();
 
 
-    //autores
+    // autores
     public static void guardarAutores(List<Autores> autores) {
         guardarLista(AUTORES_FILE, autores);
     }
@@ -31,7 +31,7 @@ public class BibliotecaRepository {
     }
 
 
-    //libros
+    // libros
     public static void guardarLibros(List<Libros> libros) {
         guardarLista(LIBROS_FILE, libros);
     }
@@ -42,7 +42,7 @@ public class BibliotecaRepository {
     }
 
 
-    //generico
+    // generico
     private static <T> void guardarLista(String ruta, T data) {
         try {
             File archivo = new File(ruta);
