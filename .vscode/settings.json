@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "BibliotecaMuskiz\\src"
+    ],
+    "java.project.referencedLibraries": [
+        "BibliotecaMuskiz\\lib\\gson-2.10.1.jar"
+    ]
+}
