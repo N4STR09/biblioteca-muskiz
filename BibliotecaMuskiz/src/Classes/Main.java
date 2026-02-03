@@ -21,7 +21,6 @@ public class Main {
             libros = new ArrayList<>();
             Inicializaciones.inicializar(autores, libros);
         }
-        System.out.println("USER.DIR = " + System.getProperty("user.dir"));
         MenuPrincipal.mostrar(sc, autores, libros);
         
         sc.close(); //cerramos el scanner para evitar que IDE nos tire un warning de posible data leakage si no lo cerramos
