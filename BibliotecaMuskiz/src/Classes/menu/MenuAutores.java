@@ -6,16 +6,17 @@ import java.util.Scanner;
 import Classes.model.Autores;
 import Classes.model.Libros;
 import Classes.service.ServiceAutores;
+import Classes.utils.ColoresUtils;
 import Classes.utils.InputUtils;
 
 public class MenuAutores {
     public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
         
-        System.out.println("1. Añadir autor");
-        System.out.println("2. Eliminar autor");
-        System.out.println("3. Visualizar autores");
-        System.out.println("4. Estadísticas de autores");
-        System.out.println("5. Salir");
+        System.out.println("1. " + ColoresUtils.VERDE + "Añadir"+ ColoresUtils.RESET + " autor");
+        System.out.println("2. " + ColoresUtils.ROJO + "Eliminar" + ColoresUtils.RESET+ " autor");
+        System.out.println("3. " + ColoresUtils.AZUL + "Visualizar" + ColoresUtils.RESET + " autores");
+        System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET + " de autores");
+        System.out.println("5. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
         int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
         
         switch (accion) {
