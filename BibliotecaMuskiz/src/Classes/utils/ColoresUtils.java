@@ -13,6 +13,19 @@ public class ColoresUtils {
     public static final String MORADO = "\u001B[35m";
     public static final String CYAN   = "\u001B[36m";
     public static final String BLANCO = "\u001B[37m";
+    public static final String AZUL_OSCURO = "\u001B[38;5;17m";
+    public static final String AZUL_INTENSO = "\u001B[38;5;18m";
+    public static final String VERDE_OSCURO = "\u001B[38;5;22m";
+    public static final String VERDE_BOSQUE = "\u001B[38;5;28m";
+    public static final String ROJO_OSCURO = "\u001B[38;5;52m";
+    public static final String ROJO_LADRILLO = "\u001B[38;5;88m";
+    public static final String NARANJA = "\u001B[38;5;208m";
+    public static final String AMARILLO_MOSTAZA = "\u001B[38;5;136m";
+    public static final String MORADO_OSCURO = "\u001B[38;5;54m";
+    public static final String MORADO_CLARO = "\u001B[38;5;141m";
+    public static final String ROSA = "\u001B[38;5;200m";
+    public static final String CYAN_OSCURO = "\u001B[38;5;23m";
+    public static final String CYAN_CLARO = "\u001B[38;5;87m";
 
     // Colores de fondo
     public static final String BG_NEGRO  = "\u001B[40m";

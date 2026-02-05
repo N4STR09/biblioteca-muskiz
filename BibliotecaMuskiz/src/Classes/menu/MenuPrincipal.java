@@ -13,9 +13,9 @@ public class MenuPrincipal {
 
         do {
             TitlesUtils.tituloBiblioteca();
-            System.out.println("\n1. Autores");
-            System.out.println("2. Libros");
-            System.out.println("3. Salir");
+            System.out.println("\n1. " + ColoresUtils.CYAN + "Autores" + ColoresUtils.RESET);
+            System.out.println("2. " + ColoresUtils.NARANJA + "Libros" + ColoresUtils.RESET);
+            System.out.println("3. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
             opcion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
 
             switch (opcion) {
