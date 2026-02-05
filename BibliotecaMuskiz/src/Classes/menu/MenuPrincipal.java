@@ -5,14 +5,15 @@ import java.util.Scanner;
 import Classes.model.Autores;
 import Classes.model.Libros;
 import Classes.repository.BibliotecaRepository;
-import Classes.utils.InputUtils;
+import Classes.utils.*;
 
 public class MenuPrincipal {
     public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
         int opcion;
 
         do {
-            System.out.println("1. Autores");
+            TitlesUtils.tituloBiblioteca();
+            System.out.println("\n1. Autores");
             System.out.println("2. Libros");
             System.out.println("3. Salir");
             opcion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
