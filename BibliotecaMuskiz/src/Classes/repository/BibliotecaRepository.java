@@ -1,6 +1,7 @@
 package Classes.repository;
 
 import Classes.setup.*;
+import Classes.utils.ColoresUtils;
 import Classes.model.*;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
@@ -52,7 +53,7 @@ public class BibliotecaRepository {
                 gson.toJson(data, writer);
             }
         } catch (IOException e) {
-            System.out.println("Error guardando " + ruta);
+            System.out.println(ColoresUtils.ROJO + "Error" + ColoresUtils.RESET + "guardando " + ruta);
         }
     }
 
@@ -63,7 +64,7 @@ public class BibliotecaRepository {
         try (Reader reader = new FileReader(archivo)) {
             return gson.fromJson(reader, type);
         } catch (IOException e) {
-            System.out.println("Error leyendo " + ruta);
+            System.out.println(ColoresUtils.ROJO + "Error" + ColoresUtils.RESET + "leyendo " + ruta);
             return null;
         }
     }
