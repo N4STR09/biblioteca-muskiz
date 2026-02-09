@@ -185,7 +185,7 @@ public class ServiceLibros {
                             System.out.println("No hay libros en la biblioteca.");
                         } else {
                             int paginas = librosMin.get(0).getNumeroPaginas();
-                            System.out.println("Libro/s con más páginas (" + paginas + " páginas):");
+                            System.out.println("Libro/s con menos páginas (" + paginas + " páginas):");
 
                             for (Libros l : librosMin) {
                                 System.out.println("- " + l.getTitulo() + " (" + l.getAutorObj().getNombre() + ")");
@@ -230,7 +230,7 @@ public class ServiceLibros {
                             System.out.println("No hay libros en la biblioteca.");
                         } else {
                             int existencias = librosMin.get(0).getExistencias();
-                            System.out.println("Libro/s con más existencias (" + existencias + " unidades):");
+                            System.out.println("Libro/s con menos existencias (" + existencias + " unidades):");
 
                             for (Libros l : librosMin) {
                                 System.out.println("- " + l.getTitulo());

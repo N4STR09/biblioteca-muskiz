@@ -50,10 +50,10 @@ public class UtilidadesLibros {
         List<Libros> min = new ArrayList<>();
         if (libros == null || libros.isEmpty()) return min;
 
-        int minPaginas = 0;
+        int minPaginas = 99999;
 
         for (Libros l : libros) {
-            if (l.getNumeroPaginas() > minPaginas) {
+            if (l.getNumeroPaginas() < minPaginas) {
                 minPaginas = l.getNumeroPaginas();
             }
         }
@@ -109,10 +109,10 @@ public class UtilidadesLibros {
         List<Libros> min = new ArrayList<>();
         if (libros == null || libros.isEmpty()) return min;
 
-        int minExistencias = 0;
+        int minExistencias = 9999;
 
         for (Libros l : libros) {
-            if (l.getExistencias() > minExistencias) {
+            if (l.getExistencias() < minExistencias) {
                 minExistencias = l.getExistencias();
             }
         }
