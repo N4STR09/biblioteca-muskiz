@@ -10,5 +10,47 @@ public class TitlesUtils {
         System.out.println(ColoresUtils.AZUL + "| |_/ / | |_) | | | (_) | ||  __/ (_| (_| | | |  | | |_| \\__ \\   <| |/ / " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.AZUL + "\\____/|_|_.__/|_|_|\\___/ \\__\\___|\\___\\__,_| \\_|  |_/\\__,_|___/_|\\_\\_/___|" + ColoresUtils.RESET);
 
-    }                                                                 
+    }
+    public static void tituloAutores(){
+        System.out.println("   _         _                      ");
+        System.out.println("  /_\\  _   _| |_ ___  _ __ ___  ___ ");
+        System.out.println(" //_\\\\| | | | __/ _ \\| '__/ _ \\/ __|");
+        System.out.println("/  _  \\ |_| | || (_) | | |  __/\\__ \\");
+        System.out.println("\\_/ \\_/\\__,_|\\__\\___/|_|  \\___||___/");
+    }
+    public static void tituloLibros(){
+        System.out.println("   __ _ _                   ");
+        System.out.println("  / /(_) |__  _ __ ___  ___ ");
+        System.out.println(" / / | | '_ \\| '__/ _ \\/ __|");
+        System.out.println("/ /__| | |_) | | | (_) \\__ \\");
+        System.out.println("\\____/_|_.__/|_|  \\___/|___/");
+    }
+    public static void tituloNuevoAutor(){
+        System.out.println("     __                           _         _             ");
+        System.out.println("  /\\ \\ \\_   _  _____   _____     /_\\  _   _| |_ ___  _ __ ");
+        System.out.println(" /  \\/ / | | |/ _ \\ \\ / / _ \\   //_\\\\| | | | __/ _ \\| '__|");
+        System.out.println("/ /\\  /| |_| |  __/\\ V / (_) | /  _  \\ |_| | || (_) | |   ");
+        System.out.println("\\_\\ \\/  \\__,_|\\___| \\_/ \\___/  \\_/ \\_/\\__,_|\\__\\___/|_|   ");
+    }
+    public static void tituloNuevoLibro(){
+        System.out.println("     __                           __ _ _               ");
+        System.out.println("  /\\ \\ \\_   _  _____   _____     / /(_) |__  _ __ ___  ");
+        System.out.println(" /  \\/ / | | |/ _ \\ \\ / / _ \\   / / | | '_ \\| '__/ _ \\ ");
+        System.out.println("/ /\\  /| |_| |  __/\\ V / (_) | / /__| | |_) | | | (_) |");
+        System.out.println("\\_\\ \\/  \\__,_|\\___| \\_/ \\___/  \\____/_|_.__/|_|  \\___/ ");
+    }
+    public static void tituloEliminarAutor(){
+        System.out.println("   __ _ _           _                      _         _             ");
+        System.out.println("  /__\\ (_)_ __ ___ (_)_ __   __ _ _ __    /_\\  _   _| |_ ___  _ __ ");
+        System.out.println(" /_\\ | | | '_ ` _ \\| | '_ \\ / _` | '__|  //_\\\\| | | | __/ _ \\| '__|");
+        System.out.println("//__ | | | | | | | | | | | | (_| | |    /  _  \\ |_| | || (_) | |   ");
+        System.out.println("\\__/ |_|_|_| |_| |_|_|_| |_|\\__,_|_|    \\_/ \\_/\\__,_|\\__\\___/|_|   ");
+    }
+    public static void tituloEliminarLibro(){
+        System.out.println("   __ _ _           _                      __ _ _               ");
+        System.out.println("  /__\\ (_)_ __ ___ (_)_ __   __ _ _ __    / /(_) |__  _ __ ___  ");
+        System.out.println(" /_\\ | | | '_ ` _ \\| | '_ \\ / _` | '__|  / / | | '_ \\| '__/ _ \\ ");
+        System.out.println("//__ | | | | | | | | | | | | (_| | |    / /__| | |_) | | | (_) |");
+        System.out.println("\\__/ |_|_|_| |_| |_|_|_| |_|\\__,_|_|    \\____/_|_.__/|_|  \\___/ ");
+    }                                                                     
 }
