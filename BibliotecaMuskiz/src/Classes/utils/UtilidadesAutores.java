@@ -182,15 +182,11 @@ public class UtilidadesAutores {
     //edad media autores
     public static double edadMediaAutores(List<Autor> autores) {
         if (autores == null || autores.isEmpty()) return 0;
+
         double total = 0;
-        int yearActual = 2026;
 
         for (Autor a : autores) {
-            int nacimiento = a.getFechaNacimiento().getYear();
-            int fin = a.getDefuncion() 
-                    ? a.getFechaFallecimiento().getYear() 
-                    : yearActual;
-            total += fin - nacimiento;
+            total += a.getEdad();
         }
 
         return total / autores.size();
