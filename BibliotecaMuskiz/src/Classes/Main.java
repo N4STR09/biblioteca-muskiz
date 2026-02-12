@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import Classes.menu.MenuPrincipal;
-import Classes.model.Autores;
-import Classes.model.Libros;
+import Classes.model.Autor;
+import Classes.model.Libro;
 import Classes.repository.BibliotecaRepository;
 import Classes.setup.Inicializaciones;
 
@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-        List<Autores> autores = BibliotecaRepository.cargarAutores();
-        List<Libros> libros = BibliotecaRepository.cargarLibros();
+        List<Autor> autores = BibliotecaRepository.cargarAutores();
+        List<Libro> libros = BibliotecaRepository.cargarLibros();
 
         if (autores == null || libros == null) {
             autores = new ArrayList<>();

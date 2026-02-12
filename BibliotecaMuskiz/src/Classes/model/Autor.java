@@ -5,7 +5,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Autores {
+public class Autor {
 
     private int idAutor;
     private String nombre;
@@ -21,7 +21,7 @@ public class Autores {
     private String obrasDestacadas;
     private List<Integer> librosEscritos;
 
-    public Autores(
+    public Autor(
             int idAutor,
             String nombre,
             String nacionalidad,

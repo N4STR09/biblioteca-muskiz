@@ -1,11 +1,11 @@
 package Classes.model;
 
-public class Libros {
+public class Libro {
     private int idLibro;
     private int existencias;
     private int numeroPaginas;
     private String titulo;
-    private Autores autor; //objeto Autor
+    private Autor autor; //objeto Autor
     private String genero;
     private int anioPublicacion;
     private String editorial;
@@ -17,8 +17,8 @@ public class Libros {
     private String categoria;
     private boolean disponibilidad;
 
-    public Libros(int idLibro, int existencias, int numeroPaginas, String titulo,
-                    Autores autor, String genero, int anioPublicacion, String editorial,
+    public Libro(int idLibro, int existencias, int numeroPaginas, String titulo,
+                    Autor autor, String genero, int anioPublicacion, String editorial,
                     String isbn, String idioma, String formato, String portada,
                     String descripcion, String categoria, boolean disponibilidad) {
         this.idLibro = idLibro;
@@ -70,7 +70,7 @@ public class Libros {
         this.titulo = titulo;
     }
 
-    public Autores getAutorObj() {
+    public Autor getAutorObj() {
         return autor;
     }
 
@@ -78,7 +78,7 @@ public class Libros {
         return autor.getNombre();
     }
 
-    public void setAutor(Autores autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
