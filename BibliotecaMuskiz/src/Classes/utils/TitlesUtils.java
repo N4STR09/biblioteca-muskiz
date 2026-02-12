@@ -52,5 +52,14 @@ public class TitlesUtils {
         System.out.println(" /_\\ | | | '_ ` _ \\| | '_ \\ / _` | '__|  / / | | '_ \\| '__/ _ \\ ");
         System.out.println("//__ | | | | | | | | | | | | (_| | |    / /__| | |_) | | | (_) |");
         System.out.println("\\__/ |_|_|_| |_| |_|_|_| |_|\\__,_|_|    \\____/_|_.__/|_|  \\___/ ");
-    }                                                                     
+    }
+    
+    public static void tituloEstadisticas(){
+        System.out.println(" _____    _            _ _     _   _               ");
+        System.out.println("|  ___|  | |          | (_)   | | (_)              ");
+        System.out.println("| |__ ___| |_ __ _  __| |_ ___| |_ _  ___ __ _ ___ ");
+        System.out.println("|  __/ __| __/ _` |/ _` | / __| __| |/ __/ _` / __|");
+        System.out.println("| |__\\__ \\ || (_| | (_| | \\__ \\ |_| | (_| (_| \\__ \\");
+        System.out.println("\\____/___/\\__\\__,_|\\__,_|_|___/\\__|_|\\___\\__,_|___/");
+    }
 }
