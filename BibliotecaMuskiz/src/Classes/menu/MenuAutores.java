@@ -8,11 +8,13 @@ import Classes.model.Libros;
 import Classes.service.ServiceAutores;
 import Classes.utils.ColoresUtils;
 import Classes.utils.InputUtils;
+import Classes.utils.TitlesUtils;
 
 public class MenuAutores {
     public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
         
-        System.out.println("1. " + ColoresUtils.VERDE + "Añadir"+ ColoresUtils.RESET + " autor");
+        TitlesUtils.tituloAutores();
+        System.out.println("\n1. " + ColoresUtils.VERDE + "Añadir"+ ColoresUtils.RESET + " autor");
         System.out.println("2. " + ColoresUtils.ROJO + "Eliminar" + ColoresUtils.RESET+ " autor");
         System.out.println("3. " + ColoresUtils.AZUL + "Visualizar" + ColoresUtils.RESET + " autores");
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET + " de autores");
