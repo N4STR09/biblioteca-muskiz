@@ -3,15 +3,14 @@ package Classes.menu;
 import java.util.List;
 import java.util.Scanner;
 
-import Classes.model.Autores;
-import Classes.model.Libros;
+import Classes.model.*;
 import Classes.service.ServiceAutores;
 import Classes.utils.ColoresUtils;
 import Classes.utils.InputUtils;
 import Classes.utils.TitlesUtils;
 
 public class MenuAutores {
-    public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
+    public static void mostrar(Scanner sc, List<Autor> autores, List<Libro> libros) {
         
         TitlesUtils.tituloAutores();
         System.out.println("\n1. " + ColoresUtils.VERDE + "Añadir"+ ColoresUtils.RESET + " autor");

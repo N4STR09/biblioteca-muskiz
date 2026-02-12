@@ -21,23 +21,23 @@ public class BibliotecaRepository {
 
 
     //autores
-    public static void guardarAutores(List<Autores> autores) {
+    public static void guardarAutores(List<Autor> autores) {
         guardarLista(AUTORES_FILE, autores);
     }
 
-    public static List<Autores> cargarAutores() {
-        Type type = new TypeToken<List<Autores>>() {}.getType();
+    public static List<Autor> cargarAutores() {
+        Type type = new TypeToken<List<Autor>>() {}.getType();
         return cargarLista(AUTORES_FILE, type);
     }
 
 
     //libros
-    public static void guardarLibros(List<Libros> libros) {
+    public static void guardarLibros(List<Libro> libros) {
         guardarLista(LIBROS_FILE, libros);
     }
 
-    public static List<Libros> cargarLibros() {
-        Type type = new TypeToken<List<Libros>>() {}.getType();
+    public static List<Libro> cargarLibros() {
+        Type type = new TypeToken<List<Libro>>() {}.getType();
         return cargarLista(LIBROS_FILE, type);
     }
 

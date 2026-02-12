@@ -2,13 +2,12 @@ package Classes.menu;
 
 import java.util.List;
 import java.util.Scanner;
-import Classes.model.Autores;
-import Classes.model.Libros;
+import Classes.model.*;
 import Classes.repository.BibliotecaRepository;
 import Classes.utils.*;
 
 public class MenuPrincipal {
-    public static void mostrar(Scanner sc, List<Autores> autores, List<Libros> libros) {
+    public static void mostrar(Scanner sc, List<Autor> autores, List<Libro> libros) {
         int opcion;
 
         do {
