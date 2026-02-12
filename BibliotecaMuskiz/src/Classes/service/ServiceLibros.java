@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import Classes.model.Autores;
 import Classes.model.Libros;
+import Classes.utils.ColoresUtils;
 import Classes.utils.InputUtils;
 import Classes.utils.UtilidadesLibros;
 
@@ -30,7 +31,7 @@ public class ServiceLibros {
         }
         
         if (autorElegido == null) {
-            System.out.println("Autor no encontrado. Libro no creado.");
+            System.out.println(ColoresUtils.ROJO + "Autor " + ColoresUtils.NEGRITA + "no" + ColoresUtils.RESET + ColoresUtils.ROJO + " encontrado. Libro " + ColoresUtils.NEGRITA + "no" + ColoresUtils.RESET + ColoresUtils.ROJO + " creado.");
         } else {
 
             String genero = InputUtils.leerString(sc, "Género del libro: ");
@@ -71,20 +72,20 @@ public class ServiceLibros {
 
             autorElegido.addLibro(nuevoLibro.getIdLibro());
 
-            System.out.println("Libro añadido correctamente.");
+            System.out.println(ColoresUtils.VERDE + "Libro añadido " + ColoresUtils.NEGRITA + "correctamente." + ColoresUtils.RESET);
         }
     }
 
     public static void eliminarLibro(Scanner sc, List<Autores> autores, List<Libros> libros) {
         if (libros.isEmpty()) {
-            System.out.println("No hay libros para eliminar.");
+            System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No " + ColoresUtils.RESET + ColoresUtils.ROJO + "hay libros para eliminar." + ColoresUtils.RESET);
         } else {
-            System.out.println("---- LIBROS ----");
+            System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----" + ColoresUtils.RESET);
             for (Libros a : libros) {
                 System.out.println(a.getIdLibro() + " - " + a.getTitulo());
             }
 
-            System.out.print("Introduce el ID del libro a eliminar: ");
+            System.out.print("Introduce el " + ColoresUtils.NEGRITA + ColoresUtils.ROJO + "ID del libro a eliminar: " + ColoresUtils.RESET);
             int idLibroEliminar = sc.nextInt();
 
             boolean eliminado = false;
@@ -93,24 +94,24 @@ public class ServiceLibros {
                 if (libros.get(i).getIdLibro() == idLibroEliminar) {
                     libros.remove(i);
                     eliminado = true;
-                    System.out.println("Libro eliminado correctamente.");
+                    System.out.println(ColoresUtils.VERDE + ColoresUtils.NEGRITA + "Libro eliminado correctamente." + ColoresUtils.RESET);
                     break;
                 }
             }
 
             if (!eliminado) {
-                System.out.println("No se encontró ningún libro con ese ID.");
+                System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No se encontró ningún libro con ese ID." + ColoresUtils.RESET);
             }
         }
     }
 
     public static void mostrarLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        System.out.println("---- LIBROS ----");
+        System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----" + ColoresUtils.RESET);
         for (Libros a : libros) {
             System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
         }
 
-        int id = InputUtils.leerInt(sc, "Introduce el ID del libro para ver más detalles (0 para salir): ");
+        int id = InputUtils.leerInt(sc, "Introduce el " + ColoresUtils.SUBRAYADO + "ID del libro" + ColoresUtils.RESET + " para ver más detalles " + ColoresUtils.NEGRITA + "(0 para salir): " + ColoresUtils.RESET);
 
         if (id != 0) {
             Libros libroSeleccionado = null;
@@ -122,7 +123,7 @@ public class ServiceLibros {
             }
 
             if (libroSeleccionado != null) {
-                System.out.println("---- DETALLES DEL LIBRO ----");
+                System.out.println(ColoresUtils.NEGRITA + "---- DETALLES DEL LIBRO ----" + ColoresUtils.RESET);
                 System.out.println("Título: " + libroSeleccionado.getTitulo());
                 System.out.println("Autor: " + libroSeleccionado.getNombreAutor());
                 System.out.println("Género: " + libroSeleccionado.getGenero());
@@ -137,41 +138,41 @@ public class ServiceLibros {
                 System.out.println("Descripción: " + libroSeleccionado.getDescripcion());
                 System.out.println("Categoría: " + libroSeleccionado.getCategoria());
             } else {
-                System.out.println("No se encontró ningún libro con ese ID.");
+                System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No se encontró ningún libro con ese ID." + ColoresUtils.RESET);
             }
         }
     }
 
     public static void estadisticasLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        System.out.println("---- ESTADISTICAS ----");
-        System.out.println("1. Estadisticas páginas");
-        System.out.println("2. Estadisticas existencias");
-        System.out.println("3. Otras Estadisticas");
-        System.out.println("4. Salir");
+        System.out.println(ColoresUtils.NEGRITA + "---- ESTADÍSTICAS ----" + ColoresUtils.RESET);
+        System.out.println("1. Estadísticas " + ColoresUtils.AZUL_OSCURO + "páginas" + ColoresUtils.RESET);
+        System.out.println("2. Estadísticas " + ColoresUtils.MORADO_OSCURO + "existencias" + ColoresUtils.RESET);
+        System.out.println("3. " + ColoresUtils.NEGRITA + "Otras " + ColoresUtils.RESET + "Estadísticas");
+        System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
         int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
         int stat;
 
         switch (tipo) {
             case 1:
-                System.out.println("1. Media de Paginas");
-                System.out.println("2. Maximo de Paginas");
-                System.out.println("3. Minimo de Paginas");
-                System.out.println("4. Salir");
+                System.out.println("1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Páginas");
+                System.out.println("2. " + ColoresUtils.CYAN + "Máximo" + ColoresUtils.RESET + " de Páginas");
+                System.out.println("3. " + ColoresUtils.NARANJA + "Mínimo" + ColoresUtils.RESET + " de Páginas");
+                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
 
                 switch (stat) {
                     case 1:
                         double media = UtilidadesLibros.mediaPaginas(libros);
-                        System.out.println("Media de páginas: " + media);
+                        System.out.println(ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de páginas: " + media);
                         break;
                     case 2:
                         List<Libros> librosMax = UtilidadesLibros.librosMaxPaginas(libros);
 
                         if (librosMax.isEmpty()) {
-                            System.out.println("No hay libros en la biblioteca.");
+                            System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No hay libros en la biblioteca." + ColoresUtils.RESET);
                         } else {
                             int paginas = librosMax.get(0).getNumeroPaginas();
-                            System.out.println("Libro/s con más páginas (" + paginas + " páginas):");
+                            System.out.println("Libro/s con " + ColoresUtils.CYAN + "más páginas" + ColoresUtils.RESET + " (" + paginas + " páginas):");
 
                             for (Libros l : librosMax) {
                                 System.out.println("- " + l.getTitulo() + " (" + l.getAutorObj().getNombre() + ")");
@@ -182,10 +183,10 @@ public class ServiceLibros {
                         List<Libros> librosMin = UtilidadesLibros.librosMinimoPaginas(libros);
 
                         if (librosMin.isEmpty()) {
-                            System.out.println("No hay libros en la biblioteca.");
+                            System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No hay libros en la biblioteca." + ColoresUtils.RESET);
                         } else {
                             int paginas = librosMin.get(0).getNumeroPaginas();
-                            System.out.println("Libro/s con menos páginas (" + paginas + " páginas):");
+                            System.out.println("Libro/s con " + ColoresUtils.NARANJA + "menos páginas" + ColoresUtils.RESET + " (" + paginas + " páginas):");
 
                             for (Libros l : librosMin) {
                                 System.out.println("- " + l.getTitulo() + " (" + l.getAutorObj().getNombre() + ")");
@@ -193,30 +194,30 @@ public class ServiceLibros {
                         }
                         break;
                     default:
-                        System.out.println("Opción no valida.");
+                        System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "Opción no valida." + ColoresUtils.RESET);
                         break;
                 }
                 break;
             case 2:
-                System.out.println("1. Media de Existencias");
-                System.out.println("2. Maximo de Existencias");
-                System.out.println("3. Minimo de Existencias");
-                System.out.println("4. Salir");
+                System.out.println("1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Existencias");
+                System.out.println("2. " + ColoresUtils.CYAN + "Máximo" + ColoresUtils.RESET + " de Existencias");
+                System.out.println("3. " + ColoresUtils.NARANJA + "Mínimo" + ColoresUtils.RESET + " de Existencias");
+                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
 
                 switch (stat) {
                     case 1:
                         double media = UtilidadesLibros.mediaExistencias(libros);
-                        System.out.println("Media de existencias: " + media);
+                        System.out.println(ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de existencias: " + ColoresUtils.NEGRITA + media + ColoresUtils.RESET);
                         break;
                     case 2:
                         List<Libros> librosMax = UtilidadesLibros.librosMaxExistencias(libros);
 
                         if (librosMax.isEmpty()) {
-                            System.out.println("No hay libros en la biblioteca.");
+                            System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No hay libros en la biblioteca." + ColoresUtils.RESET);
                         } else {
                             int existencias = librosMax.get(0).getExistencias();
-                            System.out.println("Libro/s con más existencias (" + existencias + " unidades):");
+                            System.out.println("Libro/s con " + ColoresUtils.CYAN + "más existencias" + ColoresUtils.RESET + ColoresUtils.NEGRITA + " (" + existencias + " unidades):" + ColoresUtils.RESET);
 
                             for (Libros l : librosMax) {
                                 System.out.println("- " + l.getTitulo());
@@ -227,7 +228,7 @@ public class ServiceLibros {
                         List<Libros> librosMin = UtilidadesLibros.librosMinExistencias(libros);
 
                         if (librosMin.isEmpty()) {
-                            System.out.println("No hay libros en la biblioteca.");
+                            System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No hay libros en la biblioteca." + ColoresUtils.RESET);
                         } else {
                             int existencias = librosMin.get(0).getExistencias();
                             System.out.println("Libro/s con menos existencias (" + existencias + " unidades):");
@@ -238,24 +239,24 @@ public class ServiceLibros {
                         }
                         break;
                     default:
-                        System.out.println("Opción no valida.");
+                        System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "Opción no valida." + ColoresUtils.RESET);
                         break;
                 }
                 break;
             case 3:
-                System.out.println("1. Porcentaje de libros disponibles");
-                System.out.println("2. Cantidad de libros por género");
-                System.out.println("3. Numero total de libros");
-                System.out.println("4. Salir");
+                System.out.println("1. Porcentaje de " + ColoresUtils.AMARILLO + "libros disponibles" + ColoresUtils.RESET);
+                System.out.println("2. Cantidad de " + ColoresUtils.AZUL + "libros por género" + ColoresUtils.RESET);
+                System.out.println("3. Número " + ColoresUtils.ROSA + "total de libros" + ColoresUtils.RESET);
+                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
                 
                 switch (stat) {
                     case 1:
                         double porcentaje = UtilidadesLibros.porcentajeDisponibles(libros);
-                        System.out.println("Porcentaje de libros disponibles: " + porcentaje + "%");
+                        System.out.println("Porcentaje de " + ColoresUtils.AMARILLO + "libros disponibles: " + ColoresUtils.RESET + ColoresUtils.NEGRITA + porcentaje + "%" + ColoresUtils.RESET);
                         break;
                     case 2:
-                        System.out.println("Cantidad de libros por género:");
+                        System.out.println("Cantidad de " + ColoresUtils.AZUL + "libros por género:" + ColoresUtils.RESET);
                         var porGenero = UtilidadesLibros.librosPorGenero(libros);
                         for (String tgenero : porGenero.keySet()) {
                             System.out.println(tgenero + ": " + porGenero.get(tgenero));
@@ -263,10 +264,10 @@ public class ServiceLibros {
                         break;
                     case 3:
                         int total = UtilidadesLibros.totalLibros(libros);
-                        System.out.println("Número total de libros: " + total);
+                        System.out.println("Número " + ColoresUtils.ROSA + "total de libros: " + ColoresUtils.RESET + ColoresUtils.NEGRITA + total + ColoresUtils.RESET);
                         break;
                     default:
-                        System.out.println("Opción no valida.");
+                        System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "Opción no valida." + ColoresUtils.RESET);
                         break;
                     }
                 break;
