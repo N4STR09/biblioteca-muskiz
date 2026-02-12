@@ -2,17 +2,8 @@ package Classes.service;
 
 import java.util.Scanner;
 
-<<<<<<< HEAD
-import Classes.model.Autores;
-import Classes.model.Libros;
-import Classes.utils.ColoresUtils;
-||||||| 41b469b
-import Classes.model.Autores;
-import Classes.model.Libros;
-=======
 import Classes.model.*;
 import Classes.utils.ColoresUtils;
->>>>>>> reestructuracion-menu
 import Classes.utils.InputUtils;
 import Classes.utils.UtilidadesLibros;
 
@@ -88,16 +79,8 @@ public class ServiceLibros {
         if (libros.isEmpty()) {
             System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No " + ColoresUtils.RESET + ColoresUtils.ROJO + "hay libros para eliminar." + ColoresUtils.RESET);
         } else {
-<<<<<<< HEAD
-            System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----" + ColoresUtils.RESET);
-            for (Libros a : libros) {
-||||||| 41b469b
-            System.out.println("---- LIBROS ----");
-            for (Libros a : libros) {
-=======
             System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----" + ColoresUtils.RESET);
             for (Libro a : libros) {
->>>>>>> reestructuracion-menu
                 System.out.println(a.getIdLibro() + " - " + a.getTitulo());
             }
 
@@ -121,19 +104,9 @@ public class ServiceLibros {
         }
     }
 
-<<<<<<< HEAD
-    public static void mostrarLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----" + ColoresUtils.RESET);
-        for (Libros a : libros) {
-||||||| 41b469b
-    public static void mostrarLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        System.out.println("---- LIBROS ----");
-        for (Libros a : libros) {
-=======
     public static void mostrarLibros(Scanner sc, List<Autor> autores, List<Libro> libros) {
         System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----" + ColoresUtils.RESET);
         for (Libro a : libros) {
->>>>>>> reestructuracion-menu
             System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
         }
 
@@ -169,28 +142,12 @@ public class ServiceLibros {
         }
     }
 
-<<<<<<< HEAD
-    public static void estadisticasLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        System.out.println(ColoresUtils.NEGRITA + "---- ESTADÍSTICAS ----" + ColoresUtils.RESET);
-        System.out.println("1. Estadísticas " + ColoresUtils.AZUL_OSCURO + "páginas" + ColoresUtils.RESET);
-        System.out.println("2. Estadísticas " + ColoresUtils.MORADO_OSCURO + "existencias" + ColoresUtils.RESET);
-        System.out.println("3. " + ColoresUtils.NEGRITA + "Otras " + ColoresUtils.RESET + "Estadísticas");
-        System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
-||||||| 41b469b
-    public static void estadisticasLibros(Scanner sc, List<Autores> autores, List<Libros> libros) {
-        System.out.println("---- ESTADISTICAS ----");
-        System.out.println("1. Estadisticas páginas");
-        System.out.println("2. Estadisticas existencias");
-        System.out.println("3. Otras Estadisticas");
-        System.out.println("4. Salir");
-=======
     public static void estadisticasLibros(Scanner sc, List<Autor> autores, List<Libro> libros) {
         System.out.println(ColoresUtils.NEGRITA + "---- ESTADÍSTICAS ----" + ColoresUtils.RESET);
         System.out.println("1. Estadísticas " + ColoresUtils.AZUL_OSCURO + "páginas" + ColoresUtils.RESET);
         System.out.println("2. Estadísticas " + ColoresUtils.MORADO_OSCURO + "existencias" + ColoresUtils.RESET);
         System.out.println("3. " + ColoresUtils.NEGRITA + "Otras " + ColoresUtils.RESET + "Estadísticas");
         System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
->>>>>>> reestructuracion-menu
         int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
         int stat;
 

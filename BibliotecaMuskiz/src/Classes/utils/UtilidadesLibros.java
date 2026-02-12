@@ -52,16 +52,8 @@ public class UtilidadesLibros {
 
         int minPaginas = 99999;
 
-<<<<<<< HEAD
-        for (Libros l : libros) {
-            if (l.getNumeroPaginas() < minPaginas) {
-||||||| 41b469b
-        for (Libros l : libros) {
-            if (l.getNumeroPaginas() > minPaginas) {
-=======
         for (Libro l : libros) {
             if (l.getNumeroPaginas() > minPaginas) {
->>>>>>> reestructuracion-menu
                 minPaginas = l.getNumeroPaginas();
             }
         }
@@ -119,16 +111,8 @@ public class UtilidadesLibros {
 
         int minExistencias = 9999;
 
-<<<<<<< HEAD
-        for (Libros l : libros) {
-            if (l.getExistencias() < minExistencias) {
-||||||| 41b469b
-        for (Libros l : libros) {
-            if (l.getExistencias() > minExistencias) {
-=======
         for (Libro l : libros) {
             if (l.getExistencias() > minExistencias) {
->>>>>>> reestructuracion-menu
                 minExistencias = l.getExistencias();
             }
         }

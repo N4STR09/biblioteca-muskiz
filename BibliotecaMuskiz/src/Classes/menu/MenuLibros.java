@@ -16,27 +16,19 @@ public class MenuLibros {
         System.out.println("2. " + ColoresUtils.ROJO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL + "Visualizar " + ColoresUtils.RESET + "libro");
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET);
-        
-<<<<<<< HEAD
         System.out.println("1. " + ColoresUtils.VERDE + "Añadir " + ColoresUtils.RESET + "libro");
         System.out.println("2. " + ColoresUtils.ROJO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL + "Visualizar " + ColoresUtils.RESET + "libro");
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET);
-||||||| dbeaede
         System.out.println("1. " + ColoresUtils.VERDE_OSCURO + "Añadir " + ColoresUtils.RESET + "libro");
         System.out.println("2. " + ColoresUtils.ROJO_OSCURO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL_INTENSO + "Visualizar " + ColoresUtils.RESET + "libro");
         System.out.println("4. " + ColoresUtils.AMARILLO_MOSTAZA + "Estadisticas" + ColoresUtils.RESET);
-=======
         TitlesUtils.tituloLibros();
         System.out.println("\n1. " + ColoresUtils.VERDE_OSCURO + "Añadir " + ColoresUtils.RESET + "libro");
         System.out.println("2. " + ColoresUtils.ROJO_OSCURO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL_INTENSO + "Visualizar " + ColoresUtils.RESET + "libro");
         System.out.println("4. " + ColoresUtils.AMARILLO_MOSTAZA + "Estadisticas" + ColoresUtils.RESET);
-<<<<<<< HEAD
->>>>>>> reestructuracion-menu
-||||||| 41b469b
-=======
         System.out.println("\n1. " + ColoresUtils.VERDE_OSCURO + "Añadir " + ColoresUtils.RESET + "libro");
         System.out.println("2. " + ColoresUtils.ROJO_OSCURO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL_INTENSO + "Visualizar " + ColoresUtils.RESET + "libro");
@@ -45,7 +37,6 @@ public class MenuLibros {
         System.out.println("2. " + ColoresUtils.ROJO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL + "Visualizar " + ColoresUtils.RESET + "libro");
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET);
->>>>>>> reestructuracion-menu
         System.out.println("5. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
         int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
         
