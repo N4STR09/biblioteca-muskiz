@@ -65,12 +65,12 @@ public class ServiceAutores {
         if (autores.isEmpty()) {
             System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No hay autores para eliminar." + ColoresUtils.RESET);
         } else {
-            System.out.println(ColoresUtils.NEGRITA + "---- AUTORES ----" + ColoresUtils.RESET);
+            System.out.println(ColoresUtils.NEGRITA + ColoresUtils.MORADO + "\n---- AUTORES ----" + ColoresUtils.RESET);
             for (Autor a : autores) {
                 System.out.println(a.getIdAutor() + " - " + a.getNombre());
             }
 
-            System.out.print("Introduce el" + ColoresUtils.NEGRITA + ColoresUtils.ROJO + " ID " + ColoresUtils.RESET + ColoresUtils.ROJO + "del autor a eliminar: " + ColoresUtils.RESET);
+            System.out.print("\nIntroduce el" + ColoresUtils.NEGRITA + ColoresUtils.ROJO + " ID " + ColoresUtils.RESET + ColoresUtils.ROJO + "del autor a eliminar: " + ColoresUtils.RESET);
             int id = sc.nextInt();
             sc.nextLine(); // limpiar buffer
 
@@ -92,7 +92,7 @@ public class ServiceAutores {
     }
 
     public static void visualizarAutores(Scanner sc, List<Autor> autores, List<Libro> libros) {
-        System.out.println(ColoresUtils.NEGRITA + "---- AUTORES ----" + ColoresUtils.RESET);
+        System.out.println(ColoresUtils.NEGRITA + ColoresUtils.MORADO + "---- AUTORES ----" + ColoresUtils.RESET);
 
         for (Autor a : autores) {
             System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters

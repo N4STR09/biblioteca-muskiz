@@ -10,6 +10,7 @@ public abstract class Persona {
     protected LocalDate fechaFallecimiento;
     protected int edad;
 
+    //constructor
     public Persona(
             String nombre,
             LocalDate fechaNacimiento,
@@ -23,6 +24,7 @@ public abstract class Persona {
         this.edad = calcularEdad();
     }
 
+    //metodo de calculo de edad
     private int calcularEdad() {
         LocalDate referencia = defuncion && fechaFallecimiento != null
                 ? fechaFallecimiento

@@ -79,4 +79,16 @@ public class InputUtils {
             }
         }
     }
+
+    public static void pausa(Scanner sc) {
+        System.out.println("\nPulsa ENTER para continuar...");
+        sc.nextLine();
+    }
+
+    public static void limpiarPantalla() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
+
 }

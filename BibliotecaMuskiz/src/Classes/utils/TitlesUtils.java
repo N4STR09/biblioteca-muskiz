@@ -12,18 +12,18 @@ public class TitlesUtils {
 
     }
     public static void tituloAutores(){
-        System.out.println("   _         _                      ");
-        System.out.println("  /_\\  _   _| |_ ___  _ __ ___  ___ ");
-        System.out.println(" //_\\\\| | | | __/ _ \\| '__/ _ \\/ __|");
-        System.out.println("/  _  \\ |_| | || (_) | | |  __/\\__ \\");
-        System.out.println("\\_/ \\_/\\__,_|\\__\\___/|_|  \\___||___/");
+        System.out.println(ColoresUtils.MORADO + "   _         _                      "+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.MORADO + "  /_\\  _   _| |_ ___  _ __ ___  ___ "+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.MORADO + " //_\\\\| | | | __/ _ \\| '__/ _ \\/ __|"+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.MORADO + "/  _  \\ |_| | || (_) | | |  __/\\__ \\"+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.MORADO + "\\_/ \\_/\\__,_|\\__\\___/|_|  \\___||___/"+ ColoresUtils.RESET);
     }
     public static void tituloLibros(){
-        System.out.println("   __ _ _                   ");
-        System.out.println("  / /(_) |__  _ __ ___  ___ ");
-        System.out.println(" / / | | '_ \\| '__/ _ \\/ __|");
-        System.out.println("/ /__| | |_) | | | (_) \\__ \\");
-        System.out.println("\\____/_|_.__/|_|  \\___/|___/");
+        System.out.println(ColoresUtils.CYAN +"   __ _ _                   "+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.CYAN +"  / /(_) |__  _ __ ___  ___ "+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.CYAN +" / / | | '_ \\| '__/ _ \\/ __|"+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.CYAN +"/ /__| | |_) | | | (_) \\__ \\"+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.CYAN +"\\____/_|_.__/|_|  \\___/|___/"+ ColoresUtils.RESET);
     }
     public static void tituloNuevoAutor(){
         System.out.println("     __                           _         _             ");

@@ -12,10 +12,11 @@ public class MenuPrincipal {
 
         do {
             TitlesUtils.tituloBiblioteca();
-            System.out.println("\n1. " + ColoresUtils.CYAN + "Autores" + ColoresUtils.RESET);
-            System.out.println("2. " + ColoresUtils.NARANJA + "Libros" + ColoresUtils.RESET);
-            System.out.println("3. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+            System.out.println("\n1. " + ColoresUtils.MORADO + "Autores" + ColoresUtils.RESET);
+            System.out.println("2. " + ColoresUtils.CYAN + "Libros" + ColoresUtils.RESET);
+            System.out.println("3. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
             opcion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
+            InputUtils.limpiarPantalla();
 
             switch (opcion) {
                 case 1:
