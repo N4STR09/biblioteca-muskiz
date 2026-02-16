@@ -80,7 +80,7 @@ public class ServiceAutores {
             System.out.print("\nIntroduce el" + ColoresUtils.NEGRITA + ColoresUtils.ROJO + " ID " + ColoresUtils.RESET + ColoresUtils.ROJO + "del autor a eliminar: " + ColoresUtils.RESET);
             int id = sc.nextInt();
             sc.nextLine(); // limpiar buffer
-
+            InputUtils.limpiarPantalla();
             boolean eliminado = false;
 
             for (int i = 0; i < autores.size(); i++) {
