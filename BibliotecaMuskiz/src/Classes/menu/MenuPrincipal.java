@@ -15,7 +15,7 @@ public class MenuPrincipal {
             System.out.println("\n1. " + ColoresUtils.MORADO + "Autores" + ColoresUtils.RESET);
             System.out.println("2. " + ColoresUtils.CYAN + "Libros" + ColoresUtils.RESET);
             System.out.println("3. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
-            opcion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
+            opcion = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 3);
             InputUtils.limpiarPantalla();
 
             switch (opcion) {

@@ -18,8 +18,9 @@ public class MenuAutores {
         System.out.println("3. " + ColoresUtils.AZUL + "Visualizar" + ColoresUtils.RESET);
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET);
         System.out.println("5. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
-        int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
-        
+        int accion = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 5);
+        InputUtils.limpiarPantalla();
+
         switch (accion) {
             case 1:
                 ServiceAutores.añadirAutor(sc, autores, libros);

@@ -19,7 +19,8 @@ public class MenuLibros {
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET);
         System.out.println("5. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
         int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
-        
+        InputUtils.limpiarPantalla();
+
         switch (accion) {
             case 1:
                 ServiceLibros.añadirLibro(sc, autores, libros);

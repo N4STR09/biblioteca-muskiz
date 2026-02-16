@@ -47,25 +47,26 @@ public class UtilidadesLibros {
 
     //calculo minimo de paginas
     public static List<Libro> librosMinimoPaginas(List<Libro> libros) {
-        List<Libro> min = new ArrayList<>();
-        if (libros == null || libros.isEmpty()) return min;
+    List<Libro> resultado = new ArrayList<>();
+    if (libros == null || libros.isEmpty()) return resultado;
 
-        int minPaginas = 99999;
+    int minPaginas = libros.get(0).getNumeroPaginas();
 
-        for (Libro l : libros) {
-            if (l.getNumeroPaginas() > minPaginas) {
-                minPaginas = l.getNumeroPaginas();
-            }
+    for (Libro l : libros) {
+        if (l.getNumeroPaginas() < minPaginas) {
+            minPaginas = l.getNumeroPaginas();
         }
-
-        for (Libro l : libros) {
-            if (l.getNumeroPaginas() == minPaginas) {
-                min.add(l);
-            }
-        }
-
-        return min;
     }
+
+    for (Libro l : libros) {
+        if (l.getNumeroPaginas() == minPaginas) {
+            resultado.add(l);
+        }
+    }
+
+    return resultado;
+}
+
 
     //calculo media de existencias
     public static double mediaExistencias(List<Libro> libros) {
@@ -106,25 +107,26 @@ public class UtilidadesLibros {
 
     //calculo minimo de existencias
     public static List<Libro> librosMinExistencias(List<Libro> libros) {
-        List<Libro> min = new ArrayList<>();
-        if (libros == null || libros.isEmpty()) return min;
+    List<Libro> resultado = new ArrayList<>();
+    if (libros == null || libros.isEmpty()) return resultado;
 
-        int minExistencias = 9999;
+    int minExistencias = libros.get(0).getExistencias();
 
-        for (Libro l : libros) {
-            if (l.getExistencias() > minExistencias) {
-                minExistencias = l.getExistencias();
-            }
+    for (Libro l : libros) {
+        if (l.getExistencias() < minExistencias) {
+            minExistencias = l.getExistencias();
         }
-
-        for (Libro l : libros) {
-            if (l.getExistencias() == minExistencias) {
-                min.add(l);
-            }
-        }
-
-        return min;
     }
+
+    for (Libro l : libros) {
+        if (l.getExistencias() == minExistencias) {
+            resultado.add(l);
+        }
+    }
+
+    return resultado;
+}
+
 
     //calculo de porcentaje de libros disponibles
     public static double porcentajeDisponibles(List<Libro> libros) {

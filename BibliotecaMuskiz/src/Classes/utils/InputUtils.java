@@ -81,7 +81,7 @@ public class InputUtils {
     }
 
     public static void pausa(Scanner sc) {
-        System.out.println("\nPulsa ENTER para continuar...");
+        System.out.println("\nPulsa " + ColoresUtils.AZUL + "ENTER" + ColoresUtils.RESET + " para continuar...");
         sc.nextLine();
     }
 
