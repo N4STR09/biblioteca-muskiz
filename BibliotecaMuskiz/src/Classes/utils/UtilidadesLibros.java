@@ -78,8 +78,8 @@ public class UtilidadesLibros {
         for (Libro libro : libros) {
             totalExistencias += libro.getExistencias();
         }
-
-        return (double) totalExistencias / libros.size();
+        double media = (double) totalExistencias / libros.size();
+        return Math.round(media * 100.0) / 100.0;
     }
 
     //calculo maximo de existencias
