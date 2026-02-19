@@ -83,7 +83,7 @@ public class ServiceLibros {
         if (libros.isEmpty()) {
             System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No " + ColoresUtils.RESET + ColoresUtils.ROJO + "hay libros para eliminar." + ColoresUtils.RESET);
         } else {
-            System.out.println(ColoresUtils.NEGRITA + ColoresUtils.CYAN + "---- LIBROS ----\n" + ColoresUtils.RESET);
+            TitlesUtils.tituloEliminarLibro();
             for (Libro a : libros) {
                 System.out.println(ColoresUtils.ROJO + a.getIdLibro() + ColoresUtils.RESET + " - " + a.getTitulo());
             }

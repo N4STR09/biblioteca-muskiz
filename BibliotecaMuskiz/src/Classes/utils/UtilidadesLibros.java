@@ -139,8 +139,10 @@ public class UtilidadesLibros {
             }
         }
 
-        return (double) disponibles / libros.size() * 100; //sacar el porcentaje
+        double porcentaje = (double) disponibles / libros.size() * 100;
+        return Math.round(porcentaje * 100.0) / 100.0;
     }
+
 
     //calculo de cantidad de libros por genero
     public static Map<String, Integer> librosPorGenero(List<Libro> libros) {

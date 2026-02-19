@@ -72,7 +72,7 @@ public class ServiceAutores {
             InputUtils.pausa(sc);
             InputUtils.limpiarPantalla();
         } else {
-            System.out.println(ColoresUtils.NEGRITA + ColoresUtils.MORADO + "\n---- AUTORES ----" + ColoresUtils.RESET);
+            TitlesUtils.tituloEliminarAutor();
             for (Autor a : autores) {
                 System.out.println(a.getIdAutor() + " - " + a.getNombre());
             }
