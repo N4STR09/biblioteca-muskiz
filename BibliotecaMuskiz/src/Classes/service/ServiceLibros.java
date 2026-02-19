@@ -163,7 +163,8 @@ public class ServiceLibros {
 
         switch (tipo) {
             case 1:
-                System.out.println("1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Páginas");
+                TitlesUtils.tituloEstadisticas();
+                System.out.println("\n1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Páginas");
                 System.out.println("2. " + ColoresUtils.CYAN + "Máximo" + ColoresUtils.RESET + " de Páginas");
                 System.out.println("3. " + ColoresUtils.NARANJA + "Mínimo" + ColoresUtils.RESET + " de Páginas");
                 System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
@@ -214,7 +215,8 @@ public class ServiceLibros {
                 }
                 break;
             case 2:
-                System.out.println("1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Existencias");
+                TitlesUtils.tituloEstadisticas();
+                System.out.println("\n1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Existencias");
                 System.out.println("2. " + ColoresUtils.CYAN + "Máximo" + ColoresUtils.RESET + " de Existencias");
                 System.out.println("3. " + ColoresUtils.NARANJA + "Mínimo" + ColoresUtils.RESET + " de Existencias");
                 System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
@@ -266,7 +268,8 @@ public class ServiceLibros {
                 break;
 
             case 3:
-                System.out.println("1. Porcentaje de " + ColoresUtils.AMARILLO + "libros disponibles" + ColoresUtils.RESET);
+                TitlesUtils.tituloEstadisticas();
+                System.out.println("\n1. Porcentaje de " + ColoresUtils.AMARILLO + "libros disponibles" + ColoresUtils.RESET);
                 System.out.println("2. Cantidad de " + ColoresUtils.AZUL + "libros por género" + ColoresUtils.RESET);
                 System.out.println("3. Número " + ColoresUtils.ROSA + ColoresUtils.NEGRITA + "total " + ColoresUtils.RESET + ColoresUtils.ROSA + "de libros" + ColoresUtils.RESET);
                 System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);

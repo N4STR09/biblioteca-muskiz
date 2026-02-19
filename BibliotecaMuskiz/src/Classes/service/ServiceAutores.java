@@ -153,7 +153,8 @@ public class ServiceAutores {
 
         switch (tipo) {
             case 1:
-                System.out.println("1. Autor con " + ColoresUtils.CYAN + "más libros" + ColoresUtils.RESET + " en la biblioteca");
+                TitlesUtils.tituloEstadisticas();
+                System.out.println("\n1. Autor con " + ColoresUtils.CYAN + "más libros" + ColoresUtils.RESET + " en la biblioteca");
                 System.out.println("2. Autor con " + ColoresUtils.NARANJA + "menos libros" + ColoresUtils.RESET + " en la biblioteca");
                 System.out.println("3. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 3);
@@ -200,7 +201,8 @@ public class ServiceAutores {
                 }
                 break;
             case 2:
-                System.out.println("1. Libro " + ColoresUtils.CYAN + "más Largo" + ColoresUtils.RESET);
+                TitlesUtils.tituloEstadisticas();
+                System.out.println("\n1. Libro " + ColoresUtils.CYAN + "más Largo" + ColoresUtils.RESET);
                 System.out.println("2. Libro " + ColoresUtils.NARANJA + "más Corto" + ColoresUtils.RESET);
                 System.out.println("3. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 3);
@@ -252,7 +254,8 @@ public class ServiceAutores {
                 }
                 break;
             case 3:
-                System.out.println("1. Autor " + ColoresUtils.CYAN + "más viejo" + ColoresUtils.RESET);
+                TitlesUtils.tituloEstadisticas();
+                System.out.println("\n1. Autor " + ColoresUtils.CYAN + "más viejo" + ColoresUtils.RESET);
                 System.out.println("2. Autor " + ColoresUtils.NARANJA + "más joven" + ColoresUtils.RESET);
                 System.out.println("3. " + ColoresUtils.MORADO + "Edad media" + ColoresUtils.RESET + " de los autores");
                 System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);

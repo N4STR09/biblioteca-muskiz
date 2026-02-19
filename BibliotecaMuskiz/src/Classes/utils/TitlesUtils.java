@@ -17,7 +17,7 @@ public class TitlesUtils {
         System.out.println(ColoresUtils.MORADO + "   /  \\  _   _| |_ ___  _ __ ___  ___ "+ ColoresUtils.RESET);
         System.out.println(ColoresUtils.MORADO + "  / /\\ \\| | | | __/ _ \\| '__/ _ \\/ __|"+ ColoresUtils.RESET);
         System.out.println(ColoresUtils.MORADO + " / ____ \\ |_| | || (_) | | |  __/\\__ \\"+ ColoresUtils.RESET);
-        System.out.println(ColoresUtils.MORADO + "/_/    \\_\\__,_|\\__\\___/|_|  \\___||___/"+ ColoresUtils.RESET);
+        System.out.println(ColoresUtils.MORADO + "/_/    \\_\\__,_|\\__\\___/|_|  \\___||___/ \n"+ ColoresUtils.RESET);
     }
     public static void tituloLibros(){
         System.out.println(ColoresUtils.CYAN + " _      _ _                  ");
@@ -25,7 +25,7 @@ public class TitlesUtils {
         System.out.println(ColoresUtils.CYAN + "| |     _| |__  _ __ ___  ___ " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.CYAN + "| |    | | '_ \\| '__/ _ \\/ __|" + ColoresUtils.RESET);
         System.out.println(ColoresUtils.CYAN + "| |____| | |_) | | | (_) \\__ \\" + ColoresUtils.RESET);
-        System.out.println(ColoresUtils.CYAN + "|______|_|_.__/|_|  \\___/|___/" + ColoresUtils.RESET);
+        System.out.println(ColoresUtils.CYAN + "|______|_|_.__/|_|  \\___/|___/ \n" + ColoresUtils.RESET);
     }
     public static void tituloNuevoAutor(){
         System.out.println(ColoresUtils.VERDE + " _   _                                       _             " + ColoresUtils.RESET);
@@ -50,7 +50,7 @@ public class TitlesUtils {
         System.out.println(ColoresUtils.ROJO + "| |__  | |_ _ __ ___  _ _ __   __ _ _ __     /  \\  _   _| |_ ___  _ __ " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.ROJO + "|  __| | | | '_ ` _ \\| | '_ \\ / _` | '__|   / /\\ \\| | | | __/ _ \\| '__|" + ColoresUtils.RESET);
         System.out.println(ColoresUtils.ROJO + "| |____| | | | | | | | | | | | (_| | |     / ____ \\ |_| | || (_) | |   " + ColoresUtils.RESET);
-        System.out.println(ColoresUtils.ROJO + "|______|_|_|_| |_| |_|_|_| |_|\\__,_|_|    /_/    \\_\\__,_|\\__\\___/|_|   " + ColoresUtils.RESET);
+        System.out.println(ColoresUtils.ROJO + "|______|_|_|_| |_| |_|_|_| |_|\\__,_|_|    /_/    \\_\\__,_|\\__\\___/|_|   \n" + ColoresUtils.RESET);
     }
     public static void tituloEliminarLibro(){
         System.out.println(ColoresUtils.ROJO + " ______ _ _           _                    _      _ _               " + ColoresUtils.RESET);
@@ -58,7 +58,7 @@ public class TitlesUtils {
         System.out.println(ColoresUtils.ROJO + "| |__  | |_ _ __ ___  _ _ __   __ _ _ __  | |     _| |__  _ __ ___  " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.ROJO + "|  __| | | | '_ ` _ \\| | '_ \\ / _` | '__| | |    | | '_ \\| '__/ _ \\ " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.ROJO + "| |____| | | | | | | | | | | | (_| | |    | |____| | |_) | | | (_) |" + ColoresUtils.RESET);
-        System.out.println(ColoresUtils.ROJO + "|______|_|_|_| |_| |_|_|_| |_|\\__,_|_|    |______|_|_.__/|_|  \\___/ " + ColoresUtils.RESET);
+        System.out.println(ColoresUtils.ROJO + "|______|_|_|_| |_| |_|_|_| |_|\\__,_|_|    |______|_|_.__/|_|  \\___/ \n" + ColoresUtils.RESET);
     }
     public static void tituloEstadisticas(){
         System.out.println(ColoresUtils.AMARILLO + " _____    _            _ _     _   _               " + ColoresUtils.RESET);
