@@ -101,7 +101,7 @@ public class ServiceAutores {
     }
 
     public static void visualizarAutores(Scanner sc, List<Autor> autores, List<Libro> libros) {
-        System.out.println(ColoresUtils.NEGRITA + ColoresUtils.MORADO + "\n---- AUTORES ----" + ColoresUtils.RESET);
+        TitlesUtils.tituloAutores();
 
         for (Autor a : autores) {
             System.out.println(ColoresUtils.ROJO + a.getIdAutor() + ColoresUtils.RESET + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
@@ -200,8 +200,8 @@ public class ServiceAutores {
                 }
                 break;
             case 2:
-                System.out.println("1. Libro " + ColoresUtils.CYAN + "más largo" + ColoresUtils.RESET);
-                System.out.println("2. Libro " + ColoresUtils.NARANJA + "más corto" + ColoresUtils.RESET);
+                System.out.println("1. Libro " + ColoresUtils.CYAN + "más Largo" + ColoresUtils.RESET);
+                System.out.println("2. Libro " + ColoresUtils.NARANJA + "más Corto" + ColoresUtils.RESET);
                 System.out.println("3. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 3);
                 InputUtils.limpiarPantalla();
@@ -290,7 +290,7 @@ public class ServiceAutores {
                         break;
                     case 3:
                         double media = UtilidadesAutores.edadMediaAutores(autores);
-                        System.out.println("La " + ColoresUtils.MORADO + "edad media" + ColoresUtils.RESET + " de los autores es " + ColoresUtils.NEGRITA + media + ColoresUtils.RESET);
+                        System.out.println("La " + ColoresUtils.MORADO + "edad media" + ColoresUtils.RESET + " de los autores es " + ColoresUtils.NEGRITA + media + ColoresUtils.RESET + "años");
                         InputUtils.pausa(sc);
                         InputUtils.limpiarPantalla();
                         break;

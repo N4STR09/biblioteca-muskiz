@@ -9,7 +9,7 @@ import Classes.model.Libro;
 public class Inicializaciones {
         public static void inicializar(List<Autor> autores, List<Libro> libros) {
 
-                Autor autor1 = new Autor(1, "Cervantes", "Española", LocalDate.of(1547, 9, 29), true,
+                Autor autor1 = new Autor(1, "Miguel de Cervantes", "Española", LocalDate.of(1547, 9, 29), true,
                         LocalDate.of(1616, 4, 22), "Escritor del Siglo de Oro", "cervantes.jpg",
                         "Novela", "Ninguno", "Don Quijote");
 

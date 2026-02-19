@@ -112,7 +112,7 @@ public class ServiceLibros {
     }
 
     public static void mostrarLibros(Scanner sc, List<Autor> autores, List<Libro> libros) {
-        System.out.println(ColoresUtils.NEGRITA + "---- LIBROS ----\n" + ColoresUtils.RESET);
+        TitlesUtils.tituloLibros();
         for (Libro a : libros) {
             System.out.println(a.getIdLibro() + " - "+a.getTitulo() + " - " + a.getAutor()); //printeamos lo que nos devuelva los getters
         }
@@ -268,7 +268,7 @@ public class ServiceLibros {
             case 3:
                 System.out.println("1. Porcentaje de " + ColoresUtils.AMARILLO + "libros disponibles" + ColoresUtils.RESET);
                 System.out.println("2. Cantidad de " + ColoresUtils.AZUL + "libros por género" + ColoresUtils.RESET);
-                System.out.println("3. Número " + ColoresUtils.ROSA + "total de libros" + ColoresUtils.RESET);
+                System.out.println("3. Número " + ColoresUtils.ROSA + ColoresUtils.NEGRITA + "total " + ColoresUtils.RESET + ColoresUtils.ROSA + "de libros" + ColoresUtils.RESET);
                 System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
                 InputUtils.limpiarPantalla();

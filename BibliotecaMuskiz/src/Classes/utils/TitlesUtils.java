@@ -62,7 +62,7 @@ public class TitlesUtils {
     }
     public static void tituloEstadisticas(){
         System.out.println(ColoresUtils.AMARILLO + " _____    _            _ _     _   _               " + ColoresUtils.RESET);
-        System.out.println(ColoresUtils.AMARILLO + "|  ___|  | |          | (_)   | | (_)              " + ColoresUtils.RESET);
+        System.out.println(ColoresUtils.AMARILLO + "|  ___|  | |          | /_/   | | (_)              " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.AMARILLO + "| |__ ___| |_ __ _  __| |_ ___| |_ _  ___ __ _ ___ " + ColoresUtils.RESET);
         System.out.println(ColoresUtils.AMARILLO + "|  __/ __| __/ _` |/ _` | / __| __| |/ __/ _` / __|" + ColoresUtils.RESET);
         System.out.println(ColoresUtils.AMARILLO + "| |__\\__ \\ || (_| | (_| | \\__ \\ |_| | (_| (_| \\__ \\" + ColoresUtils.RESET);
