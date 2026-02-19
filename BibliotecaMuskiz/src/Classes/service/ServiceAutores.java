@@ -91,6 +91,7 @@ public class ServiceAutores {
             if (!eliminado) {
                 System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No se encontró ningún autor con ese ID." + ColoresUtils.RESET);
             }
+            sc.nextLine();
         }
     }
 
