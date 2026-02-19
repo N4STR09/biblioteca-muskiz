@@ -52,13 +52,15 @@ public class TitlesUtils {
         System.out.println(" |______|_|_|_| |_| |_|_|_| |_|\\__,_|_|    /_/    \\_\\__,_|\\__\\___/|_|   " + ColoresUtils.RESET);
     }
 
-    public static void tituloEliminarLibro(){
-        System.out.println(ColoresUtils.ROJO_OSCURO + "   __ _ _           _                      __ _ _               ");
-        System.out.println("  /__\\ (_)_ __ ___ (_)_ __   __ _ _ __    / /(_) |__  _ __ ___  ");
-        System.out.println(" /_\\ | | | '_ ` _ \\| | '_ \\ / _` | '__|  / / | | '_ \\| '__/ _ \\ ");
-        System.out.println("//__ | | | | | | | | | | | | (_| | |    / /__| | |_) | | | (_) |");
-        System.out.println("\\__/ |_|_|_| |_| |_|_|_| |_|\\__,_|_|    \\____/_|_.__/|_|  \\___/ " + ColoresUtils.RESET);
-    }                                                           
+    
+    public static void tituloEliminarLibro() {
+        System.out.println(ColoresUtils.ROJO_OSCURO + "  ______ _ _           _                    _      _ _               ");
+        System.out.println(" |  ____| (_)         (_)                  | |    (_) |              ");
+        System.out.println(" | |__  | |_ _ __ ___  _ _ __   __ _ _ __  | |     _| |__  _ __ ___  ");
+        System.out.println(" |  __| | | | '_ ` _ \\| | '_ \\ / _` | '__| | |    | | '_ \\| '__/ _ \\ ");
+        System.out.println(" | |____| | | | | | | | | | | | (_| | |    | |____| | |_) | | | (_) |");
+        System.out.println(" |______|_|_|_| |_| |_|_|_| |_|\\__,_|_|    |______|_|_.__/|_|  \\___/ " + ColoresUtils.RESET);
+    }
 
     public static void tituloEstadisticas(){
         System.out.println(ColoresUtils.AMARILLO + " _____    _            _ _     _   _               ");
