@@ -108,7 +108,7 @@ public class ServiceLibros {
         }
         sc.nextLine();
         InputUtils.pausa(sc);
-        InputUtils.limpiarPantalla();
+        InputUtils.limpiarPantalla(); //limpar pantalla
     }
 
     public static void mostrarLibros(Scanner sc, List<Autor> autores, List<Libro> libros) {
