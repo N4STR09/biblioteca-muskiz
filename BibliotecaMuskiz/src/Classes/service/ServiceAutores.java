@@ -139,7 +139,7 @@ public class ServiceAutores {
         System.out.println("2. Estadísticas " + ColoresUtils.MORADO + "páginas por libro " + ColoresUtils.RESET + "de autor");
         System.out.println("3. " + ColoresUtils.NARANJA + "Edades " + ColoresUtils.RESET + "de autores");
         System.out.println("4. " + ColoresUtils.VERDE + "Total " + ColoresUtils.RESET + "de autores");
-        System.out.println("5. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+        System.out.println("5. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
         int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
         int stat;
 
@@ -147,7 +147,7 @@ public class ServiceAutores {
             case 1:
                 System.out.println("1. Autor con " + ColoresUtils.CYAN + "más libros" + ColoresUtils.RESET + " en la biblioteca");
                 System.out.println("2. Autor con " + ColoresUtils.NARANJA + "menos libros" + ColoresUtils.RESET + " en la biblioteca");
-                System.out.println("3. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+                System.out.println("3. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
 
                 switch (stat) {
@@ -191,7 +191,7 @@ public class ServiceAutores {
             case 2:
                 System.out.println("1. Libro " + ColoresUtils.CYAN + "más largo" + ColoresUtils.RESET);
                 System.out.println("2. Libro " + ColoresUtils.NARANJA + "más corto" + ColoresUtils.RESET);
-                System.out.println("3. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+                System.out.println("3. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
 
                 switch (stat) {
@@ -241,7 +241,7 @@ public class ServiceAutores {
                 System.out.println("1. Autor " + ColoresUtils.CYAN + "más viejo" + ColoresUtils.RESET);
                 System.out.println("2. Autor " + ColoresUtils.NARANJA + "más joven" + ColoresUtils.RESET);
                 System.out.println("3. " + ColoresUtils.MORADO + "Edad media" + ColoresUtils.RESET + " de los autores");
-                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+                System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
 
                 switch (stat) {

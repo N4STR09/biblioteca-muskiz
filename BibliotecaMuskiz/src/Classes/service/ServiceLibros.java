@@ -150,7 +150,7 @@ public class ServiceLibros {
         System.out.println("1. Estadísticas " + ColoresUtils.AZUL_OSCURO + "páginas" + ColoresUtils.RESET);
         System.out.println("2. Estadísticas " + ColoresUtils.MORADO_OSCURO + "existencias" + ColoresUtils.RESET);
         System.out.println("3. " + ColoresUtils.NEGRITA + "Otras " + ColoresUtils.RESET + "Estadísticas");
-        System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+        System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
         int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
         int stat;
 
@@ -159,7 +159,7 @@ public class ServiceLibros {
                 System.out.println("1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Páginas");
                 System.out.println("2. " + ColoresUtils.CYAN + "Máximo" + ColoresUtils.RESET + " de Páginas");
                 System.out.println("3. " + ColoresUtils.NARANJA + "Mínimo" + ColoresUtils.RESET + " de Páginas");
-                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+                System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
 
                 switch (stat) {
@@ -204,7 +204,7 @@ public class ServiceLibros {
                 System.out.println("1. " + ColoresUtils.MORADO + "Media" + ColoresUtils.RESET + " de Existencias");
                 System.out.println("2. " + ColoresUtils.CYAN + "Máximo" + ColoresUtils.RESET + " de Existencias");
                 System.out.println("3. " + ColoresUtils.NARANJA + "Mínimo" + ColoresUtils.RESET + " de Existencias");
-                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+                System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
 
                 switch (stat) {
@@ -249,7 +249,7 @@ public class ServiceLibros {
                 System.out.println("1. Porcentaje de " + ColoresUtils.AMARILLO + "libros disponibles" + ColoresUtils.RESET);
                 System.out.println("2. Cantidad de " + ColoresUtils.AZUL + "libros por género" + ColoresUtils.RESET);
                 System.out.println("3. Número " + ColoresUtils.ROSA + "total de libros" + ColoresUtils.RESET);
-                System.out.println("4. "  + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
+                System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
                 stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
                 
                 switch (stat) {

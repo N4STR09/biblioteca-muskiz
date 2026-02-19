@@ -20,8 +20,9 @@ public class MenuLibros {
         System.out.println("2. " + ColoresUtils.ROJO + "Eliminar " + ColoresUtils.RESET + "libro");
         System.out.println("3. " + ColoresUtils.AZUL + "Visualizar " + ColoresUtils.RESET + "libro");
         System.out.println("4. " + ColoresUtils.AMARILLO + "Estadísticas" + ColoresUtils.RESET);
-        System.out.println("5. " + ColoresUtils.ROJO_LADRILLO + ColoresUtils.NEGRITA + "Salir" + ColoresUtils.RESET);
-        int accion = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
+        System.out.println("5. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
+        int accion = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 5);
+        InputUtils.limpiarPantalla();
        
         switch (accion) {
             case 1:
