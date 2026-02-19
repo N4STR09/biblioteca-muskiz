@@ -78,8 +78,8 @@ public class UtilidadesLibros {
         for (Libro libro : libros) {
             totalExistencias += libro.getExistencias();
         }
-        double media = (double) totalExistencias / libros.size();
-        return Math.round(media * 100.0) / 100.0;
+
+        return (double) totalExistencias / libros.size();
     }
 
     //calculo maximo de existencias
@@ -139,10 +139,8 @@ public class UtilidadesLibros {
             }
         }
 
-        double porcentaje = (double) disponibles / libros.size() * 100;
-        return Math.round(porcentaje * 100.0) / 100.0;
+        return (double) disponibles / libros.size() * 100; //sacar el porcentaje
     }
-
 
     //calculo de cantidad de libros por genero
     public static Map<String, Integer> librosPorGenero(List<Libro> libros) {

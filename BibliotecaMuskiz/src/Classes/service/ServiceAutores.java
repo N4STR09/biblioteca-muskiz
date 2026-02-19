@@ -17,7 +17,7 @@ public class ServiceAutores {
         
         TitlesUtils.tituloNuevoAutor();
         //solicitud de datos al usuario
-        String nombre = InputUtils.leerString(sc, "Nombre del autor: ");
+        String nombre = InputUtils.leerString(sc, "\nNombre del autor: ");
 
         String nacionalidad = InputUtils.leerString(sc, "Nacionalidad: ");
 
@@ -60,20 +60,24 @@ public class ServiceAutores {
         );
 
         autores.add(nuevoAutor); //lo añadimos a la lista
+        InputUtils.limpiarPantalla();
         System.out.println(ColoresUtils.VERDE + ColoresUtils.NEGRITA + "Autor añadido correctamente." + ColoresUtils.RESET);
+        InputUtils.pausa(sc);
+        InputUtils.limpiarPantalla();
     }
 
     public static void eliminarAutor(Scanner sc, List<Autor> autores, List<Libro> libros) {
-
         if (autores.isEmpty()) {
             System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No hay autores para eliminar." + ColoresUtils.RESET);
+            InputUtils.pausa(sc);
+            InputUtils.limpiarPantalla();
         } else {
-        TitlesUtils.tituloEliminarAutor();
+            System.out.println(ColoresUtils.NEGRITA + ColoresUtils.MORADO + "\n---- AUTORES ----" + ColoresUtils.RESET);
             for (Autor a : autores) {
                 System.out.println(a.getIdAutor() + " - " + a.getNombre());
             }
 
-            System.out.print("Introduce el" + ColoresUtils.NEGRITA + ColoresUtils.ROJO + " ID " + ColoresUtils.RESET + ColoresUtils.ROJO + "del autor a eliminar: " + ColoresUtils.RESET);
+            System.out.print("\nIntroduce el" + ColoresUtils.NEGRITA + ColoresUtils.ROJO + " ID " + ColoresUtils.RESET + ColoresUtils.ROJO + "del autor a eliminar: " + ColoresUtils.RESET);
             int id = sc.nextInt();
             sc.nextLine(); // limpiar buffer
 
@@ -83,32 +87,33 @@ public class ServiceAutores {
                 if (autores.get(i).getIdAutor() == id) {
                     autores.remove(i);
                     eliminado = true;
-                    System.out.println(ColoresUtils.VERDE + ColoresUtils.NEGRITA + "Autor eliminado correctamente." + ColoresUtils.RESET);
+                    System.out.println(ColoresUtils.VERDE + ColoresUtils.NEGRITA + "\nAutor eliminado correctamente." + ColoresUtils.RESET);
+                    InputUtils.pausa(sc);
+                    InputUtils.limpiarPantalla();
                     break;
                 }
             }
 
             if (!eliminado) {
-                System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No se encontró ningún autor con ese ID." + ColoresUtils.RESET);
+                System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "\nNo se encontró ningún autor con ese ID." + ColoresUtils.RESET);
             }
-            sc.nextLine();
         }
     }
 
     public static void visualizarAutores(Scanner sc, List<Autor> autores, List<Libro> libros) {
-        TitlesUtils.tituloEliminarAutor();
-        
+        System.out.println(ColoresUtils.NEGRITA + ColoresUtils.MORADO + "\n---- AUTORES ----" + ColoresUtils.RESET);
+
         for (Autor a : autores) {
-            System.out.println(a.getIdAutor() + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
+            System.out.println(ColoresUtils.ROJO + a.getIdAutor() + ColoresUtils.RESET + " - " + a.getNombre()); //printeamos lo que nos devuelva los getters
         }
-        int id = InputUtils.leerInt(sc, "Introduce el ID del autor para ver detalles " + ColoresUtils.NEGRITA + "(0 para salir): " + ColoresUtils.RESET);
+        int id = InputUtils.leerInt(sc, "\nIntroduce el " + ColoresUtils.ROJO + "ID" + ColoresUtils.RESET + " del autor para ver detalles " + ColoresUtils.NEGRITA + "(0 para salir): " + ColoresUtils.RESET);
 
         if (id != 0) {
             boolean encontrado = false;
 
             for (Autor a : autores) {
                 if (a.getIdAutor() == id) {
-                    System.out.println(ColoresUtils.NEGRITA + "---- DETALLES DEL AUTOR ----" + ColoresUtils.RESET);
+                    System.out.println(ColoresUtils.NEGRITA + "\n---- DETALLES DEL AUTOR ----" + ColoresUtils.RESET);
                     System.out.println("ID: " + a.getIdAutor());
                     System.out.println("Nombre: " + a.getNombre());
                     System.out.println("Nacionalidad: " + a.getNacionalidad());
@@ -128,20 +133,22 @@ public class ServiceAutores {
             }
 
             if (!encontrado) {
-                System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "No se encontró ningún autor con ese ID." + ColoresUtils.RESET);
+                System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "\nNo se encontró ningún autor con ese ID." + ColoresUtils.RESET);
             }
         }
+        InputUtils.pausa(sc);
+        InputUtils.limpiarPantalla();
     }
 
     public static void estadisticasAutores(Scanner sc, List<Autor> autores, List<Libro> libros) {
-
         TitlesUtils.tituloEstadisticas();
-        System.out.println("1. Estadísticas " + ColoresUtils.AZUL + "libros por autor" + ColoresUtils.RESET);
-        System.out.println("2. Estadísticas " + ColoresUtils.MORADO + "páginas por libro " + ColoresUtils.RESET + "de autor");
-        System.out.println("3. " + ColoresUtils.NARANJA + "Edades " + ColoresUtils.RESET + "de autores");
-        System.out.println("4. " + ColoresUtils.VERDE + "Total " + ColoresUtils.RESET + "de autores");
+        System.out.println("\n1. " + ColoresUtils.AZUL + "Libros por autor" + ColoresUtils.RESET);
+        System.out.println("2. " + ColoresUtils.MORADO + "Páginas por libro " + ColoresUtils.RESET);
+        System.out.println("3. " + ColoresUtils.NARANJA + "Edades " + ColoresUtils.RESET);
+        System.out.println("4. " + ColoresUtils.VERDE + "Total " + ColoresUtils.RESET);
         System.out.println("5. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
-        int tipo = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 5);
+        int tipo = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 5);
+        InputUtils.limpiarPantalla();
         int stat;
 
         switch (tipo) {
@@ -149,7 +156,8 @@ public class ServiceAutores {
                 System.out.println("1. Autor con " + ColoresUtils.CYAN + "más libros" + ColoresUtils.RESET + " en la biblioteca");
                 System.out.println("2. Autor con " + ColoresUtils.NARANJA + "menos libros" + ColoresUtils.RESET + " en la biblioteca");
                 System.out.println("3. " + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
-                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
+                stat = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 3);
+                InputUtils.limpiarPantalla();
 
                 switch (stat) {
                     case 1:
@@ -166,7 +174,8 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
-
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     case 2:
                         List<Autor> minAutores = UtilidadesAutores.autoresConMenosLibros(autores);
@@ -182,7 +191,8 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
-
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     default:
                         System.out.println(ColoresUtils.NEGRITA + ColoresUtils.ROJO + "Opción no valida." + ColoresUtils.RESET);
@@ -193,7 +203,8 @@ public class ServiceAutores {
                 System.out.println("1. Libro " + ColoresUtils.CYAN + "más largo" + ColoresUtils.RESET);
                 System.out.println("2. Libro " + ColoresUtils.NARANJA + "más corto" + ColoresUtils.RESET);
                 System.out.println("3. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
-                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 3);
+                stat = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 3);
+                InputUtils.limpiarPantalla();
 
                 switch (stat) {
                     case 1:
@@ -213,6 +224,8 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     case 2:
                         List<Autor> autoresMinLibro = UtilidadesAutores.autoresLibroMasCorto(autores, libros);
@@ -231,10 +244,10 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
-
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     default:
-                        System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "Opción no valida." + ColoresUtils.RESET);
                         break;
                 }
                 break;
@@ -243,7 +256,8 @@ public class ServiceAutores {
                 System.out.println("2. Autor " + ColoresUtils.NARANJA + "más joven" + ColoresUtils.RESET);
                 System.out.println("3. " + ColoresUtils.MORADO + "Edad media" + ColoresUtils.RESET + " de los autores");
                 System.out.println("4. "  + ColoresUtils.ROJO + ColoresUtils.NEGRITA + ColoresUtils.SUBRAYADO + "Salir" + ColoresUtils.RESET);
-                stat = InputUtils.leerNumeroMenu(sc, "Selecciona una opción: ", 4);
+                stat = InputUtils.leerNumeroMenu(sc, "\nSelecciona una opción: ", 4);
+                InputUtils.limpiarPantalla();
 
                 switch (stat) {
                     case 1:
@@ -257,6 +271,8 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     case 2:
                         List<Autor> jovenes = UtilidadesAutores.autoresMasJovenes(autores);
@@ -269,19 +285,24 @@ public class ServiceAutores {
                                 System.out.println("- " + a.getNombre());
                             }
                         }
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     case 3:
                         double media = UtilidadesAutores.edadMediaAutores(autores);
                         System.out.println("La " + ColoresUtils.MORADO + "edad media" + ColoresUtils.RESET + " de los autores es " + ColoresUtils.NEGRITA + media + ColoresUtils.RESET);
+                        InputUtils.pausa(sc);
+                        InputUtils.limpiarPantalla();
                         break;
                     default:
-                        System.out.println(ColoresUtils.ROJO + ColoresUtils.NEGRITA + "Opción no valida." + ColoresUtils.RESET);
                         break;
                 }
                 break;
             case 4: 
                 int total = UtilidadesAutores.totalAutores(autores);
-                System.out.println("El " + ColoresUtils.NEGRITA + "total" + ColoresUtils.RESET + " de autores en la biblioteca es " + ColoresUtils.VERDE + ColoresUtils.NEGRITA + total);
+                System.out.println("El " + ColoresUtils.NEGRITA + "total" + ColoresUtils.RESET + " de autores en la biblioteca es " + ColoresUtils.VERDE + ColoresUtils.NEGRITA + total + ColoresUtils.RESET);
+                InputUtils.pausa(sc);
+                InputUtils.limpiarPantalla();
                 break;
             default:
                 break;
