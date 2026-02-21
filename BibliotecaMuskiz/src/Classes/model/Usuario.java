@@ -5,10 +5,6 @@ import java.time.LocalDate;
 public class Usuario extends Persona {
 
     private int idUsuario;
-    private String nombre;
-    private LocalDate fechaNacimiento;
-    private boolean defuncion;
-    private LocalDate fechaFallecimiento;
     private boolean activo;
     private String dni;
     private int numeroSeguridadSocial;
